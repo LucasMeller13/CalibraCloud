@@ -3,7 +3,7 @@
 Integrantes: André Eyng e Lucas Meller.
 
 ### Descrição do Projeto 
-O projeto Front-End CalibraCloud organiza em uma única plataforma calibrações de diversos sensores para fácil acesso aos estagiários e professores da SATC. Para isso, o cadastramento de cada sensor com sua identificação e caracterísitcas são feitos na plataforma, após isso é cadastrado a calibração do sensor como também o método utilizado e resultados obtidos (quais foram os procedimentos na realização da calibração, upload de arquivos utilizados na calibração; descrição dos resultados como a ordem da linha de tendência e R2).
+O projeto Front-End CalibraCloud organiza em uma única plataforma calibrações de diversos sensores para fácil acesso aos estagiários e professores da SATC. Para isso, o cadastramento de cada sensor com sua identificação e características são feitos na plataforma, após isso é cadastrado a calibração do sensor como também o método utilizado e resultados obtidos (quais foram os procedimentos na realização da calibração, upload de arquivos utilizados; descrição dos resultados como a ordem da linha de tendência e R2).
 
 ### Objetivo do projeto 
 O objetivo do projeto CalibraCloud é organizar em um único lugar na nuvem todas as calibrações de sensores feitas em laboratórios da SATC visto que, em diversos casos, os arquivos de calibração são perdidos pela rotatividade de computadores usados como também pelas calibrações serem feitas em contas de usuários diferentes, o que torna complexo o monitoramento da localização de cada calibração de sensores.
@@ -16,7 +16,7 @@ O objetivo do projeto CalibraCloud é organizar em um único lugar na nuvem toda
 </ul>
 
 ### Público Alvo 
-Os principais "clientes" do projeto são professores e estagiários que usam sensores que precisam de calibrações para a conversão que desejam.
+Os principais "clientes" do projeto são professores e estagiários que usam sensores e que precisam de calibrações para a unidade de conversão que desejam.
 
 ### Tecnologias
 As principais tecnologias que serão usadas são o React e a biblioteca Radix.
