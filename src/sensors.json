@@ -1,0 +1,22 @@
+[
+  {
+    "id": "xs54i",
+    "tipo_sensor": "cel_carga",
+    "r2": 0.98,
+    "ordem_tendencia": 5,
+    "data": "01/05/2023",
+    "nome_pessoa": "Carimbo",
+    "descricao": "blabla",
+    "equacao_calibracao": "f(x) = 10x^2"
+  },
+  {
+    "id": "l4542",
+    "tipo_sensor": "sensor_pressao",
+    "r2": 0.9345,
+    "ordem_tendencia": 2,
+    "data": "12/01/2023",
+    "nome_pessoa": "Carimbo",
+    "descricao": "blabla",
+    "equacao_calibracao": "f(x) = 2342.324x^5"
+  }
+]
