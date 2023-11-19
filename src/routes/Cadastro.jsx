@@ -1,4 +1,19 @@
+import { useState } from 'react';
+
+import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+
+import Sensores from '../sensors.json';
+
 export default function Cadastro() {
+  const [items, setItems] = useListaCadastro();
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const idGeneratedSensor = generateId();
+  const todayDate = new Date();
+
+  let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
+
+
   function addItem(event) {
     event.preventDefault();
 
@@ -11,14 +26,20 @@ export default function Cadastro() {
     const formData = new FormData(form);
     if (
       formData.get('nomePessoa') !== '' &&
-      +formData.get('newItemQtd') > 0 &&
-      formData.get('dropdownTipoSensor') !== ''
+      formData.get('dropdownTipoSensor') !== '' &&
+      formData.get('descricaoCalibracao') !== '' &&
+      formData.get('equacaoCalibracao') !== ''
     ) {
       // objeto que representa nosso novo item
       const newItem = {
-        id: generateId(),
-        name: formData.get('newItemName'),
-        qtd: +formData.get('newItemQtd'),
+        id: idGeneratedSensor,
+        tipoSensor: formData.get('dropdownTipoSensor'),
+        r2: formData.get('r2'),
+        ordemTendencia: formData.get('ordemTendencia'),
+        data: date,
+        nomePessoa: formData.get('nomePessoa'),
+        descricao: formData.get('descricaoCalibracao'),
+        equacaoCalibracao: formData.get('equacaoCalibracao')
       };
 
       // mantando os itens já cadastrados e adicionando o novo no final
@@ -27,6 +48,7 @@ export default function Cadastro() {
       // resetando o form e apagando mensagens de erro antigas
       form.reset();
       setErrorMessage('');
+      console.log(items);
     } else {
       setErrorMessage('Preencha todos os campos!');
     }
@@ -34,7 +56,11 @@ export default function Cadastro() {
   return (
     <>
       <div className="">
-        <form>
+        <form onSubmit={addItem}
+        method="get"
+        className="mt-6 rounded bg-gray-100 p-3.5">
+        <h3><strong>ID:</strong> {idGeneratedSensor}</h3>
+        <h3><strong>Data da calibração:</strong> {date}</h3>
           <label className="block text-black-600">Nome</label>
           <input
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -92,15 +118,11 @@ export default function Cadastro() {
             name="equacaoCalibracao"
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
           />
-          <label className="block text-black-600 mt-3">
-            Imagem do gráfico de conversão
-          </label>
-          <input
-            id="imagemGrafico"
-            name="imagemGrafico"
-            type="file"
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-          />
+          {!!errorMessage && (
+            <div className="mt-1 font-semibold text-red-500">
+              {errorMessage}
+            </div>
+          )}
           <button
             type="submit"
             className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"

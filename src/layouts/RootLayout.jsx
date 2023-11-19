@@ -8,7 +8,7 @@ export default function RootLayout() {
   const lastPos = useRef(0);
 
   const navLinkClassName =
-    'mr-4 mt-4 block text-base font-medium text-slate-700 hover:text-white-600 md:mt-0 md:inline-block';
+    'mr-4 mt-4 block text-base font-medium text-slate-400 hover:text-white-600 md:mt-0 md:inline-block';
 
   function toggleMenu(event) {
     event.preventDefault();
@@ -54,7 +54,7 @@ export default function RootLayout() {
             <div className="display: flex">
               <img src="./src/images/logo.svg" width="40px" />
               <Link className="flex items-center" to="/">
-                <span className="self-center text-xl font-semibold text-white">
+                <span className="self-center text-xl font-semibold text-white ml-1">
                   CalibraCloud
                 </span>
               </Link>
@@ -118,7 +118,7 @@ export default function RootLayout() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              className="h-5 w-5 text-gray-900"
+              className="h-5 w-5 text-white-900"
               viewBox="0 0 24 24"
             >
               <path d="M3 12h18M3 6h18M3 18h18" />
