@@ -19,7 +19,8 @@ const ListaCadastroContext = createContext([[], () => {}]);
  * não perderemos os itens da lista de compras mesmo que fechamos a janela.
  */
 export function ListaCadastroProvider(props) {
-  const [items, setItems] = useState([]);
+  /*
+  const [items, setItems] = useState(Sensores);
 
   useEffect(() => {
     const itemsData = localStorage.getItem('items');
@@ -28,6 +29,20 @@ export function ListaCadastroProvider(props) {
   }, []);
 
   useEffect(() => {
+    if (items.length > 0) {
+      localStorage.setItem('items', JSON.stringify(items));
+    }
+  }, [items]); */
+
+  const initialItems = () => {
+    const itemsData = localStorage.getItem('items');
+    return itemsData ? JSON.parse(itemsData) : Sensores;
+  };
+
+  const [items, setItems] = useState(initialItems);
+
+  useEffect(() => {
+    // Only update localStorage if items is not empty
     if (items.length > 0) {
       localStorage.setItem('items', JSON.stringify(items));
     }

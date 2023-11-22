@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 
+import { useEffect } from 'react';
+
 import Sensores from '../sensors.json';
 
 export default function Cadastro() {
@@ -13,6 +15,9 @@ export default function Cadastro() {
 
   let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
 
+  useEffect(() => {
+    console.log("Items after update:", items);
+  }, [items]);
 
   function addItem(event) {
     event.preventDefault();
@@ -44,11 +49,11 @@ export default function Cadastro() {
 
       // mantando os itens já cadastrados e adicionando o novo no final
       setItems([...items, newItem]);
-
+      
       // resetando o form e apagando mensagens de erro antigas
       form.reset();
       setErrorMessage('');
-      console.log(items);
+      
     } else {
       setErrorMessage('Preencha todos os campos!');
     }
@@ -60,7 +65,6 @@ export default function Cadastro() {
         method="get"
         className="mt-6 rounded bg-gray-100 p-3.5">
         <h3><strong>ID:</strong> {idGeneratedSensor}</h3>
-        <h3><strong>Data da calibração:</strong> {date}</h3>
           <label className="block text-black-600">Nome</label>
           <input
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -123,6 +127,7 @@ export default function Cadastro() {
               {errorMessage}
             </div>
           )}
+          <h3><strong>Data de cadastro:</strong> {date}</h3>
           <button
             type="submit"
             className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"
