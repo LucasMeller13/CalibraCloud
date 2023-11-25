@@ -10,6 +10,7 @@ export default function Cadastro() {
   const idGeneratedSensor = generateId();
   const todayDate = new Date();
 
+  let dateJSX = todayDate.getFullYear() + "-" + parseInt(todayDate.getMonth()+1) + "-" + todayDate.getDate()
   let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function Cadastro() {
         tipoSensor: formData.get('dropdownTipoSensor'),
         r2: +formData.get('r2'),
         ordemTendencia: +formData.get('ordemTendencia'),
-        data: date,
+        data: dateJSX,
         nomePessoa: formData.get('nomePessoa'),
         descricao: formData.get('descricaoCalibracao'),
         equacaoCalibracao: formData.get('equacaoCalibracao')

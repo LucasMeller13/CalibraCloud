@@ -39,7 +39,7 @@ export function ListaCadastroProvider(props) {
     return itemsData ? JSON.parse(itemsData) : Sensores;
   };
 
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState(Sensores);
 
   
 

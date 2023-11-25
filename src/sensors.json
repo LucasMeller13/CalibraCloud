@@ -4,7 +4,7 @@
     "tipoSensor": "celulaCarga",
     "r2": 0.98,
     "ordemTendencia": 2,
-    "data": "01/05/2023",
+    "data": "2023-05-01",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 10x^2"
@@ -14,7 +14,7 @@
     "tipoSensor": "sensorPressao",
     "r2": 0.9345,
     "ordemTendencia": 5,
-    "data": "12/04/2023",
+    "data": "2023-04-12",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 2342.324x^5"
@@ -24,7 +24,7 @@
     "tipoSensor": "sensorDistancia",
     "r2": 0.9,
     "ordemTendencia": 4,
-    "data": "23/01/2023",
+    "data": "2023-01-23",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 2342.324x^4"
@@ -34,7 +34,7 @@
     "tipoSensor": "decibelimetro",
     "r2": 0.942,
     "ordemTendencia": 2,
-    "data": "23/11/2023",
+    "data": "2023-11-23",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 23x^2"
@@ -44,7 +44,7 @@
     "tipoSensor": "acelerometro",
     "r2": 0.891,
     "ordemTendencia": 1,
-    "data": "10/05/2023",
+    "data": "2023-05-11",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 324.232x"
@@ -54,7 +54,7 @@
     "tipoSensor": "extensometro",
     "r2": 0.911,
     "ordemTendencia": 2,
-    "data": "13/05/2023",
+    "data": "2023-05-13",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 324.232x^2 + 234.1x + 2"
@@ -64,7 +64,7 @@
     "tipoSensor": "sensorTemperatura",
     "r2": 0.903,
     "ordemTendencia": 3,
-    "data": "11/08/2023",
+    "data": "2023-08-11",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 124.54x^3 - 324.232x^2 + 234.1x + 2"

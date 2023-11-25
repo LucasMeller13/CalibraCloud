@@ -15,10 +15,11 @@ export default function RootLayout() {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  /*
   const handHeaderScroll = useCallback(() => {
     const header = headerRef?.current;
     const currPos = document.documentElement.scrollTop;
-    console.log(lastPos.current);
+    //console.log(lastPos.current);
     if (header) {
       if (currPos > +lastPos.current) {
         if (currPos > header.offsetHeight) {
@@ -39,7 +40,7 @@ export default function RootLayout() {
       window.removeEventListener('scroll', handHeaderScroll, false);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []);*/
 
   return (
     <>
