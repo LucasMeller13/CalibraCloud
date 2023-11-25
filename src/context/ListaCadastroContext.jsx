@@ -41,6 +41,8 @@ export function ListaCadastroProvider(props) {
 
   const [items, setItems] = useState(initialItems);
 
+  
+
   useEffect(() => {
     // Only update localStorage if items is not empty
     if (items.length > 0) {

@@ -1,10 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 
-import { useEffect } from 'react';
-
-import Sensores from '../sensors.json';
 
 export default function Cadastro() {
   const [items, setItems] = useListaCadastro();
@@ -39,8 +36,8 @@ export default function Cadastro() {
       const newItem = {
         id: idGeneratedSensor,
         tipoSensor: formData.get('dropdownTipoSensor'),
-        r2: formData.get('r2'),
-        ordemTendencia: formData.get('ordemTendencia'),
+        r2: +formData.get('r2'),
+        ordemTendencia: +formData.get('ordemTendencia'),
         data: date,
         nomePessoa: formData.get('nomePessoa'),
         descricao: formData.get('descricaoCalibracao'),
@@ -65,7 +62,7 @@ export default function Cadastro() {
         method="get"
         className="mt-6 rounded bg-gray-100 p-3.5">
         <h3><strong>ID:</strong> {idGeneratedSensor}</h3>
-          <label className="block text-black-600">Nome</label>
+          <label className="block text-black-600">Nome Pessoa</label>
           <input
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
             id="nomePessoa"
