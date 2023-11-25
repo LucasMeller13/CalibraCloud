@@ -69,7 +69,7 @@ export default function RootLayout() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-white' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
               }
               end
             >
@@ -78,7 +78,7 @@ export default function RootLayout() {
             <NavLink
               to="/cadastro"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-white' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
               }
             >
               Cadastro
@@ -86,7 +86,7 @@ export default function RootLayout() {
             <NavLink
               to="/consulta"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-white' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
               }
             >
               Consulta
@@ -94,7 +94,7 @@ export default function RootLayout() {
             <NavLink
               to="/edicao"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-white' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
               }
             >
               Edição
@@ -102,7 +102,7 @@ export default function RootLayout() {
             <NavLink
               to="/remocao"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-white' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
               }
             >
               Remoção
