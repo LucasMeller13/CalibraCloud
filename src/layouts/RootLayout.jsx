@@ -8,7 +8,7 @@ export default function RootLayout() {
   const lastPos = useRef(0);
 
   const navLinkClassName =
-    'mr-4 mt-4 block text-base font-medium text-slate-400 hover:text-white-600 md:mt-0 md:inline-block';
+    'mr-4 mt-4 block text-base font-medium  hover:text-white-600 md:mt-0 md:inline-block';
 
   function toggleMenu(event) {
     event.preventDefault();
@@ -69,7 +69,7 @@ export default function RootLayout() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
               end
             >
@@ -78,7 +78,7 @@ export default function RootLayout() {
             <NavLink
               to="/cadastro"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
               Cadastro
@@ -86,7 +86,7 @@ export default function RootLayout() {
             <NavLink
               to="/consulta"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
               Consulta
@@ -94,7 +94,7 @@ export default function RootLayout() {
             <NavLink
               to="/edicao"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
               Edição
@@ -102,7 +102,7 @@ export default function RootLayout() {
             <NavLink
               to="/remocao"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : ''}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
               }
             >
               Remoção

@@ -50,7 +50,7 @@ export default function Edicao() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const confirmacaoEdicaoUser = window.confirm(`Tem certeza de que deseja editar os dados do sensor ${formData.get('sensorId')}?`);
+    const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja editar os dados do sensor ${formData.get('sensorId')}?`);
 
     if (confirmacaoEdicaoUser) {
 
