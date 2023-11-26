@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useListaCadastro} from '../context/ListaCadastroContext';
 
 export default function Consulta() {
