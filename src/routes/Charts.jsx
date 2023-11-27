@@ -5,11 +5,11 @@ const LineChartSensor = ({ data }) => {
     return (
         <LineChart width={600} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="monthYear" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="value" name='Nº de sensores:' stroke="#8884d8" />
+            <Line type="monotone" dataKey="quantity" name='Nº de sensores cadastrados' stroke="#8884d8" />
         </LineChart>
     );
 };
@@ -25,11 +25,11 @@ const BarChartSensor = ({ data }) => {
             }}
         >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="monthYear" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="value" name='Nº de sensores:' fill="#8884d8" />
+            <Bar dataKey="quantity" name='Nº de sensores cadastrados' fill="#8884d8" />
         </BarChart>
     );
 };

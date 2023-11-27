@@ -62,7 +62,12 @@ export default function Cadastro() {
         <form onSubmit={addItem}
         method="get"
         className="mt-6 rounded bg-gray-100 p-3.5">
-        <h3><strong>ID:</strong> {idGeneratedSensor}</h3>
+          <h3><strong>ID:</strong></h3>
+          <input
+            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+            disabled={true}
+            value={idGeneratedSensor}></input>
+          
           <label className="block text-black-600"><strong>Nome</strong></label>
           <input
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -70,6 +75,13 @@ export default function Cadastro() {
             name="nomePessoa"
             placeholder='Nome pessoa'
           />
+
+          <h3 className='mt-3'><strong>Data de cadastro:</strong> </h3>
+          <input
+            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+            disabled={true}
+            value={date}></input>
+          
           <label className="block text-black-600 mt-3"><strong>Tipo do sensor</strong></label>
           <select
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -84,6 +96,7 @@ export default function Cadastro() {
             <option value="extensometro">Extensômetro</option>
             <option value="sensorTemperatura">Sensor de temperatura</option>
           </select>
+
           <label className="block text-black-600 mt-3">
             <strong>Ordem da linha de tendência</strong>
           </label>
@@ -96,6 +109,7 @@ export default function Cadastro() {
             max="10"
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
           />
+
           <label className="block text-black-600 mt-3"><strong>R²</strong></label>
           <input
             id="r2"
@@ -107,6 +121,7 @@ export default function Cadastro() {
             step="0.001"
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
           />
+
           <label className="block text-black-600 mt-3"><strong>Descrição</strong></label>
           <input
             id="descricaoCalibracao"
@@ -114,6 +129,7 @@ export default function Cadastro() {
             placeholder='Como foi feito a calibração, qual método utilizado, características específicas do sensor, etc...'
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
           />
+
           <label className="block text-black-600 mt-3">
             <strong>Equação de calibração</strong>
           </label>
@@ -123,12 +139,13 @@ export default function Cadastro() {
             placeholder='y = 234.12x^3 + x^2 - 324.1'
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
           />
+          
           {!!errorMessage && (
             <div className="mt-1 font-semibold text-red-500">
               {errorMessage}
             </div>
           )}
-          <h3 className='mt-3'><strong>Data de cadastro:</strong> {date}</h3>
+          
           <button
             type="submit"
             className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"

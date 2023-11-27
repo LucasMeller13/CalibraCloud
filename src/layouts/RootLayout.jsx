@@ -55,7 +55,7 @@ export default function RootLayout() {
             <div className="display: flex">
               <img src="./src/images/logo.svg" width="40px" />
               <Link className="flex items-center" to="/">
-                <span className="self-center text-2xl font-semibold text-white ml-1 mb-1">
+                <span className="self-center text-2xl font-semibold text-white ml-1 mb-1 mr-5">
                   CalibraCloud
                 </span>
               </Link>
@@ -69,7 +69,7 @@ export default function RootLayout() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${navLinkClassName} ml-5 ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
               end
             >
