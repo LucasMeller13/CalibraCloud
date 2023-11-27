@@ -5,8 +5,8 @@ export default function Remocao() {
   const [selectedSensor, setSelectedSensor] = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(true);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
+  const [messageMood, setMessageMood] = useState(false);
 
   function returnDataFormat(x) {
     let [year, month, day] = x.split('-');
@@ -14,16 +14,18 @@ export default function Remocao() {
   }
 
   function checkId(event) {
+    setErrorMessage('');
     const idSensorInput = event.target.value;
     const sensorPresente = selectedSensor.some(sensor => sensor.id === idSensorInput);
-    setErrorMessage('');
+    //setErrorMessage('');
     setIsValidId(sensorPresente);
 
     if (sensorPresente) {
-      const sensorEncontrado = selectedSensor.find(sensor => sensor.id === idSensorInput);
+      const sensorEncontrado = selectedSensor.find(sensor => sensor.id === idSensorInput)
+      SetSensoresFiltrados([sensorEncontrado])
 
     } else {
-      setIsDisabled(true);
+      SetSensoresFiltrados(selectedSensor)
     }
   }
 
@@ -50,44 +52,28 @@ export default function Remocao() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     if (
-      formData.get('sensorId') !== '' || 
-      formData.get('nomePessoa') !== '' ||
-      formData.get('dataInicio') !== '' ||
-      formData.get('dataTermino') !== '' ||
-      formData.get('dropdownTipoSensor') !== ''
+      formData.get('sensorId') !== '' 
     ) {
 
       let id = formData.get('sensorId');
-      let nome = formData.get('nomePessoa');
-      let dateInicio = formData.get('dataInicio');
-      let dateTermino = formData.get('dataTermino');
-      let sensorTipo = formData.get('dropdownTipoSensor')
-      
-      const filterData = () => {
-      const filtered = selectedSensor.filter((item) => {
-      const itemDate = item.data;
-      const start = dateInicio !== '' ? dateInicio : null;
-      const end = dateTermino !== '' ? dateTermino : null;
-      return (
-          (id ? item.id === id : true) &&
-          (nome ? item.nomePessoa.toLowerCase().includes(nome.toLowerCase()) : true) &&
-          (sensorTipo ? item.tipoSensor === sensorTipo : true) &&
-          (start ? itemDate >= start : true) &&
-          (end ? itemDate <= end : true)
-          );
-        });
-      return filtered;
-      };
 
-      SetSensoresFiltrados(filterData())
-      
-      // resetando o form e apagando mensagens de erro antigas
+      const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja remover o sensor (${id}) do banco de dados?`);
+
+      if (confirmacaoEdicaoUser) {
+        setSelectedSensor(selectedSensor.filter(item => item.id !== id))
+        SetSensoresFiltrados(selectedSensor)
+        setMessageMood(true)
+        setErrorMessage(`Sensor com id (${id}) removido com sucesso!`)
+      } else {
+        setMessageMood(false)
+        setErrorMessage(`Remoção impedida pelo usuário do sensor com id (${id}).`)
+        SetSensoresFiltrados(selectedSensor)
+      }
+
       form.reset();
-      setErrorMessage('');
       
     } else {
       SetSensoresFiltrados(selectedSensor)
-      //setErrorMessage('Preencha algum dos campos!');
     }
   }
 
@@ -105,13 +91,15 @@ export default function Remocao() {
             id="sensorId"
             placeholder="Sensor ID"
             onChange={checkId}
+            maxLength="5"
         />
 
-      {!!errorMessage && (
-            <div className="mt-1 font-semibold text-red-500">
+        {!!errorMessage && (
+          <div className="mt-1 font-semibold"
+              style={{ color: messageMood ? 'green' : 'red' }}>
               {errorMessage}
-            </div>
-          )}
+          </div>
+            )}
 
         <button
             type="submit"

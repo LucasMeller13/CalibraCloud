@@ -87,6 +87,7 @@ export default function Consulta() {
             name="sensorId"
             id="sensorId"
             placeholder="Sensor ID"
+            maxLength="5"
         />
 
        

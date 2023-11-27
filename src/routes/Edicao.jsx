@@ -116,6 +116,7 @@ export default function Edicao() {
             id="sensorId"
             placeholder="Sensor ID"
             onChange={checkId}
+            maxLength="5"
         />
 
        
