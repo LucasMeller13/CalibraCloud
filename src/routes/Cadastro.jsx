@@ -61,7 +61,7 @@ export default function Cadastro() {
       <div className="">
         <form onSubmit={addItem}
         method="get"
-        className="mt-6 rounded bg-gray-100 p-3.5">
+        className="mt-6 rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4">
           <h3><strong>ID:</strong></h3>
           <input
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"

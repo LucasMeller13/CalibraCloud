@@ -68,5 +68,45 @@
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
     "equacaoCalibracao": "f(x) = 124.54x^3 - 324.232x^2 + 234.1x + 2"
+  },
+  {
+    "id": "das56",
+    "tipoSensor": "sensorTemperatura",
+    "r2": 0.912,
+    "ordemTendencia": 3,
+    "data": "2023-08-21",
+    "nomePessoa": "Joao",
+    "descricao": "blabla",
+    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+  },
+  {
+    "id": "fgds4",
+    "tipoSensor": "extensometro",
+    "r2": 0.94,
+    "ordemTendencia": 3,
+    "data": "2023-05-21",
+    "nomePessoa": "Joao",
+    "descricao": "blabla",
+    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+  },
+  {
+    "id": "qew21",
+    "tipoSensor": "extensometro",
+    "r2": 0.89,
+    "ordemTendencia": 3,
+    "data": "2022-01-01",
+    "nomePessoa": "Cleber",
+    "descricao": "blabla",
+    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+  },
+  {
+    "id": "453fd",
+    "tipoSensor": "decibelimetro",
+    "r2": 0.982,
+    "ordemTendencia": 3,
+    "data": "2021-10-24",
+    "nomePessoa": "Cleber",
+    "descricao": "blabla",
+    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   }
 ]

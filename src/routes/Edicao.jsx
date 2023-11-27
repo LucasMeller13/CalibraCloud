@@ -105,7 +105,7 @@ export default function Edicao() {
   return (
     <>
     <div>
-    <form method="get" className="rounded bg-gray-100 p-3.5 shadow-2xl" onSubmit={consultarSensor}>
+    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4 shadow-2xl" onSubmit={consultarSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input

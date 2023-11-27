@@ -46,7 +46,7 @@ export default function RootLayout() {
     <>
       <header
         ref={headerRef}
-        className={`fixed top-0 z-50 w-full bg-black transform bg-black px-6 py-5 transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 z-50 w-full bg-black border-b-4 border-cyan-300 transform bg-black px-6 py-5 transition-all duration-500 ease-in-out ${
           isScrollingHeader ? '-translate-y-full' : 'shadow-md'
         }`}
       >

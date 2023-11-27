@@ -124,19 +124,30 @@ export default function Dashboard() {
       return "Sensor de temperatura"
     }
   }
-
-  const data = [
-  { name: 'out/2023', value: 400 },
-  { name: 'nov/2023', value: 300 },
-  { name: 'dez/2023', value: 200 },
-  { name: 'jan/2024', value: 278 },
-];
   
   return (
     <>
-      <div className='bg-gray-100 p-1'>
-      <h1 className='text-5xl m-10'>Bem vindo, Carimbo.</h1>
-        <BarChartSensor data={returnQtData(selectedSensor)} />
+      <div className='bg-gray-100 p-1 rounded-2xl shadow-xl'>
+        <h1 className='text-5xl m-10 underline-offset-8 underline decoration-2'>Bem vindo, Carimbo.</h1>
+        <div className="grid grid-cols-3 gap-4 f">
+          <div className=" bg-sky-700 p-4 m-3 rounded-lg shadow-xl">
+            <div className='border border-sky-500 p-4 rounded-lg shadow font-semibold text-xl text-white'>
+              <h2 className='text-2xl font-bold mb-4'>Último sensor adicionado:</h2>
+              <p>Sensor ID: {selectedSensor[selectedSensor.length - 1].id}</p>
+              <p>Nome: {selectedSensor[selectedSensor.length - 1].nomePessoa}</p>
+              <p>Data de Cadastro: {returnDataFormat(selectedSensor[selectedSensor.length - 1].data)}</p>
+              <p>Tipo de Sensor: {returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor)}</p>
+              <p>R²: {selectedSensor[selectedSensor.length - 1].r2}</p>
+              <p className='break-words'>Descrição: {selectedSensor[selectedSensor.length - 1].descricao}</p>
+              <p>Equação de Calibração:</p>
+              <p className='text-lg'>  {selectedSensor[selectedSensor.length - 1].equacaoCalibracao}</p>
+            </div>
+          </div>
+          <div className="p-4 m-3 col-span-2 bg-gray-300 rounded-lg">
+            <BarChartSensor data={returnQtData(selectedSensor)} />
+          </div>
+        </div>
+        
       </div>
     </>
   );

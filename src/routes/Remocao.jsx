@@ -81,7 +81,7 @@ export default function Remocao() {
   return (
     <>
     <div>
-    <form method="get" className="rounded bg-gray-100 p-3.5 shadow-2xl" onSubmit={consultarSensor}>
+    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4 shadow-2xl" onSubmit={consultarSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input
@@ -117,23 +117,23 @@ export default function Remocao() {
       ) : (
         sensoresFiltrados.map(sensor => (
           <div key={sensor.id} className="bg-white shadow-2xl rounded-lg overflow-hidden my-4">
-            <div className="p-5 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-teal-600">ID: {sensor.id}</h3>
-              <p className="text-gray-600">Nome pessoa: {sensor.nomePessoa}</p>
+            <div className="p-5 border-b font-semibold text-black border-gray-200">
+              <h3 className="text-lg ">ID: {sensor.id}</h3>
+              <p className="">Nome pessoa: {sensor.nomePessoa}</p>
             </div>
             <div className="p-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                  <p className="text-gray-700"><span className="font-semibold">Tipo do sensor:</span> {returnNomeSensor(sensor.tipoSensor)}.</p>
-                  <p className="text-gray-700"><span className="font-semibold">Data:</span> {returnDataFormat(sensor.data)}</p>
+                  <p className="text-black"><span className="font-semibold">Tipo do sensor:</span> {returnNomeSensor(sensor.tipoSensor)}.</p>
+                  <p className="text-black"><span className="font-semibold">Data:</span> {returnDataFormat(sensor.data)}</p>
                 </div>
                 <div>
-                  <p className="text-gray-700"><span className="font-semibold">Ordem da Tendência:</span> {sensor.ordemTendencia}</p>
-                  <p className="text-gray-700"><span className="font-semibold">R²:</span> {sensor.r2}</p>
+                  <p className="text-black"><span className="font-semibold">Ordem da Tendência:</span> {sensor.ordemTendencia}</p>
+                  <p className="text-black"><span className="font-semibold">R²:</span> {sensor.r2}</p>
                 </div>
               </div>
-              <p className="text-gray-700 pt-3"><span className="font-semibold">Equação de Calibração:</span> {sensor.equacaoCalibracao}</p>
-              <p className="text-gray-700 break-words"><span className="font-semibold">Descrição:</span> {sensor.descricao}.</p>
+              <p className="text-black pt-3"><span className="font-semibold">Equação de Calibração:</span> {sensor.equacaoCalibracao}</p>
+              <p className="text-black break-words"><span className="font-semibold">Descrição:</span> {sensor.descricao}.</p>
             </div>
           </div>
         ))
