@@ -98,7 +98,8 @@ export default function Consulta() {
             name="nomePessoa"
             placeholder='Nome pessoa'
         />
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
           <label className="block text-black-600 mt-3"><strong>Tipo do sensor</strong></label>
           <select
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -114,8 +115,8 @@ export default function Consulta() {
             <option value="extensometro">Extensômetro</option>
             <option value="sensorTemperatura">Sensor de temperatura</option>
           </select>
-
-        
+        </div>
+        <div>
         <label className="block text-black-600 mt-3"><strong>Data Início</strong></label>
         <input
             type="date"
@@ -123,15 +124,17 @@ export default function Consulta() {
             id="dataInicio"
             name="dataInicio"
         />
-
-       
+        </div>
+       <div>
         <label className="block text-black-600 mt-3"><strong>Data Fim</strong></label>
         <input
             type="date"
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
             id="dataTermino"
             name="dataTermino"
-        />
+            />
+                </div>
+                </div>
 
       {!!errorMessage && (
             <div className="mt-1 font-semibold text-red-500">
@@ -152,7 +155,7 @@ export default function Consulta() {
 
       <div className="max-w-4xl mx-auto p-5">
       {sensoresFiltrados.length === 0 ? (
-        <div className="text-center text-gray-600 italic">Nenhum sensor encontrado.</div>
+        <div className="text-center text-black italic text-lg mt-5"><strong>Nenhum sensor encontrado.</strong></div>
       ) : (
         sensoresFiltrados.map(sensor => (
           <div key={sensor.id} className="bg-white shadow-2xl rounded-lg overflow-hidden my-4">

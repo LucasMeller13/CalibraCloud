@@ -8,7 +8,7 @@ export default function RootLayout() {
   const lastPos = useRef(0);
 
   const navLinkClassName =
-    'mr-4 mt-4 block text-base font-medium  hover:text-white-600 md:mt-0 md:inline-block';
+    'mr-6 mt-4 block text-base font-medium text-lg hover:text-white-600 md:mt-0 md:inline-block';
 
   function toggleMenu(event) {
     event.preventDefault();
@@ -50,12 +50,12 @@ export default function RootLayout() {
           isScrollingHeader ? '-translate-y-full' : 'shadow-md'
         }`}
       >
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between">
+        <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between">
           <div className="sm:mr-8">
             <div className="display: flex">
               <img src="./src/images/logo.svg" width="40px" />
               <Link className="flex items-center" to="/">
-                <span className="self-center text-xl font-semibold text-white ml-1">
+                <span className="self-center text-2xl font-semibold text-white ml-1 mb-1">
                   CalibraCloud
                 </span>
               </Link>
@@ -69,7 +69,7 @@ export default function RootLayout() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
+                `${navLinkClassName} ml-5 ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
               end
             >
@@ -125,14 +125,16 @@ export default function RootLayout() {
               <path d="M3 12h18M3 6h18M3 18h18" />
             </svg>
           </div>
-          <h3 className="text-white mr-2">Front End - ABP</h3>
+          <h3 className="text-white mr-2 text-lg">Front End - ABP</h3>
         </div>
       </header>
       <main className="mx-7 mt-28 flex-grow lg:mx-6">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-screen-xl"> 
           <Outlet />
         </div>
       </main>
     </>
   );
 }
+
+//<div className="mx-auto max-w-5xl"> 
