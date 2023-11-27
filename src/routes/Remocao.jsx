@@ -52,7 +52,8 @@ export default function Remocao() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     if (
-      formData.get('sensorId') !== '' 
+      formData.get('sensorId') !== '' &&
+      isValidId
     ) {
 
       let id = formData.get('sensorId');
