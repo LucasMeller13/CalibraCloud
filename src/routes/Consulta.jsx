@@ -79,7 +79,7 @@ export default function Consulta() {
   return (
     <>
     <div>
-    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4" onSubmit={consultarSensor}>
+    <form method="get" className="rounded-xl bg-gray-100 border-4 border-sky-950 pl-6 pr-6 pb-6 pt-4" onSubmit={consultarSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input
