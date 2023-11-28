@@ -79,7 +79,7 @@ export default function Consulta() {
   return (
     <>
     <div>
-    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4 shadow-2xl" onSubmit={consultarSensor}>
+    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4" onSubmit={consultarSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input
@@ -152,13 +152,13 @@ export default function Consulta() {
 
     
   </div>
-
+        
       <div className="max-w-4xl mx-auto p-5">
       {sensoresFiltrados.length === 0 ? (
         <div className="text-center text-black italic text-lg mt-5"><strong>Nenhum sensor encontrado.</strong></div>
       ) : (
         sensoresFiltrados.map(sensor => (
-          <div key={sensor.id} className="bg-white shadow-2xl rounded-lg overflow-hidden my-4">
+          <div key={sensor.id} className="bg-white rounded-lg overflow-hidden my-4">
             <div className="p-5 border-b font-semibold text-black border-gray-200">
               <h3 className="text-lg">ID: {sensor.id}</h3>
               <p className="">Nome pessoa: {sensor.nomePessoa}</p>
