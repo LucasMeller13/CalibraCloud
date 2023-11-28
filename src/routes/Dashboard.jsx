@@ -114,16 +114,16 @@ export default function Dashboard() {
   }
 
   function maxWidthDescricao(x) {
-    if (x.length > 60) {
-      return x.slice(0,63)+"..."
+    if (x.length > 35) {
+      return x.slice(0,36)+"..."
     } else {
       return x
     }
   }
 
   function maxWidthEquacao(x) {
-    if (x.length > 32) {
-      return x.slice(0,33)+"..."
+    if (x.length > 35) {
+      return x.slice(0,36)+"..."
     } else {
       return x
     }
@@ -200,38 +200,46 @@ export default function Dashboard() {
         </div>
         <div className='.bg-gradient-diagonal'>
           <div className="grid grid-cols-3 gap-4">
-            <div className="bg-gray-800 p-4 m-3 rounded-lg strong-shadow border-2 border-sky-950 hover:bg-gray-700 transition ease-in-out delay-50 hover:-translate-y-0.5">
+            <div className="bg-gray-800 p-4 m-3 rounded-lg strong-shadow hover:bg-gray-900 border-2 border-sky-950 hover:bg-gpr-12ray-700 transition ease-in-out delay-50 hover:-translate-y-0.5">
               <div className=' p-4 rounded-lg font-semibold text-xl text-white'>
                 <h2 className='text-2xl font-bold mb-4'>Último sensor adicionado:</h2>
-                <table className="table-auto">
+                <table className="w-max">
                   <tbody>
                     <tr>
-                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Sensor ID</td>
-                      <td className='border-2 border-slate-600 p-2'>{selectedSensor[selectedSensor.length - 1].id}</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Sensor ID</td>
+                      <td className='border-2 border-sky-600 p-2'>{selectedSensor[selectedSensor.length - 1].id}</td>
                     </tr>
                     <tr>
-                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Nome</td>
-                      <td className='border-2 border-slate-600 p-2'>{maxWidthNome(selectedSensor[selectedSensor.length - 1].nomePessoa,10)}</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Nome</td>
+                      <td className='border-2 border-sky-600 p-2'>{maxWidthNome(selectedSensor[selectedSensor.length - 1].nomePessoa,10)}</td>
                     </tr>
                     <tr>
-                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Data de Cadastro</td>
-                      <td className='border-2 border-slate-600 p-2'>{returnDataFormat(selectedSensor[selectedSensor.length - 1].data)}</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Data de Cadastro</td>
+                      <td className='border-2 border-sky-600 p-2'>{returnDataFormat(selectedSensor[selectedSensor.length - 1].data)}</td>
                     </tr>
                     <tr>
-                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Tipo de Sensor</td>
-                      <td className='border-2 border-slate-600 p-2'>{returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor)}</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Tipo de Sensor</td>
+                      <td className='border-2 border-sky-600 p-2'>{returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor) 
+                              === 'Sensor de temperatura'? 'Sen. de Temperatura' : returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor)}</td>
                     </tr>
                     <tr>
-                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>R²</td>
-                      <td className='border-2 border-slate-600 p-2'>{selectedSensor[selectedSensor.length - 1].r2}</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>R²</td>
+                      <td className='border-2 border-sky-600 p-2'>{selectedSensor[selectedSensor.length - 1].r2}</td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-sky-600 p-2' colSpan="2">
+                      <p className='font-bold'>Equação de Calibração:</p>
+                      <p className='text-lg'>{maxWidthEquacao(selectedSensor[selectedSensor.length - 1].equacaoCalibracao)}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-sky-600 p-2 break-words' colSpan="2">
+                        <p className='break-words font-bold'>Descrição: </p>
+                        <p className='text-lg'>{maxWidthDescricao(selectedSensor[selectedSensor.length - 1].descricao)}</p>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-                <div className='border-r-2 border-l-2 border-b-2 border-slate-600 p-2'>
-                  <p className='mt-1'>Equação de Calibração:</p>
-                  <p className='text-lg'>{maxWidthEquacao(selectedSensor[selectedSensor.length - 1].equacaoCalibracao)}</p>
-                </div>
-                <p className='break-words border-r-2 border-l-2 border-b-2 border-slate-600 p-2'>Descrição: {maxWidthDescricao(selectedSensor[selectedSensor.length - 1].descricao)}</p>
               </div>
             </div>
             <div className="strong-shadow border-2 border-sky-950 p-4 m-3 col-span-2 bg-gray-300 rounded-lg transition ease-in-out delay-50 hover:-translate-y-0.5">
@@ -239,7 +247,7 @@ export default function Dashboard() {
             </div>
           </div>
               <div className="grid grid-cols-3 gap-4 f">
-            <div className="strong-shadow border-2 border-sky-950 bg-gray-800 hover:bg-gray-700 p-4 m-3 rounded-lg shadow-xl transition ease-in-out delay-50 hover:-translate-y-0.5">
+            <div className="strong-shadow border-2 border-sky-950 bg-gray-800 hover:bg-gray-900 p-4 m-3 rounded-lg shadow-xl transition ease-in-out delay-50 hover:-translate-y-0.5">
                 <div className=''>
                   <PieChartComponent data={returnsQtNome(selectedSensor)} />
                 </div>

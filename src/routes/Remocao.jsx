@@ -102,13 +102,15 @@ export default function Remocao() {
           </div>
             )}
 
-        <button
-            type="submit"
-            className="rounded bg-cyan-300 px-4 py-2 text-black font-semibold rounded-lg border-2 border-black hover:bg-cyan-400 mt-5
-                       transition ease-in-out delay-50 hover:-translate-y-0.5"
-        >
-            Remover
-        </button>
+        <div className='flex justify-end'>
+            <button
+              type="submit"
+              className="rounded bg-cyan-300 px-6 py-2 text-black font-semibold rounded-lg border-2 border-black hover:bg-cyan-400 mt-5
+                        transition ease-in-out delay-50 hover:-translate-y-0.5"
+            >
+              Remover
+            </button>
+          </div>
     </form>
   </div>
 

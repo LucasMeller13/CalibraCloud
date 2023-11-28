@@ -14,7 +14,7 @@ const COLORS = ['#87CEEB', '#00C49F', '#FFBB28', '#FF8042', '#DC143C', '#32CD32'
 const PieChartComponent = ({ data }) => (
     <>
         <div>
-            <h2 className='text-center font-semibold text-2xl text-white'>Qt.Sensores cadastrados x Usuário</h2> 
+            <h2 className='text-center font-semibold text-2xl text-white'>Qt. Sensores cadastrados x Usuário</h2> 
         </div>
         <PieChart width={400} height={300}>
         <Pie
@@ -23,7 +23,7 @@ const PieChartComponent = ({ data }) => (
         cy={148}
         labelLine={false}
         label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-        outerRadius={100}
+        outerRadius={80}
         fill="#8884d8"
         dataKey="y"
         >
@@ -45,7 +45,7 @@ const BarChartSensorQtData = ({ data }) => {
         
         <BarChart
             width={800}
-            height={450}
+            height={380}
             data={data}
             margin={{
                 top: 20, right: 30, left: 10, bottom: 10,
