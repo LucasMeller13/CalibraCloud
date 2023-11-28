@@ -80,8 +80,8 @@ export default function Remocao() {
 
   return (
     <>
-    <div>
-    <form method="get" className="rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4 shadow-2xl" onSubmit={consultarSensor}>
+    <div className='flex justify-center items-center'>
+    <form method="get" className="rounded-xl text-lg mt-10 bg-gray-100 w-1/2 pl-6 pr-6 pb-6 pt-4 border-4 border-sky-950 strong-shadow" onSubmit={consultarSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input
@@ -104,19 +104,20 @@ export default function Remocao() {
 
         <button
             type="submit"
-            className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"
+            className="rounded bg-cyan-300 px-4 py-2 text-black font-semibold rounded-lg border-2 border-black hover:bg-cyan-400 mt-5
+                       transition ease-in-out delay-50 hover:-translate-y-0.5"
         >
             Remover
         </button>
     </form>
   </div>
 
-      <div className="max-w-4xl mx-auto p-5">
+      <div className="max-w-4xl mx-auto text-lg p-5">
       {sensoresFiltrados.length === 0 ? (
         <div className="text-center text-gray-600 italic">Nenhum sensor encontrado.</div>
       ) : (
         sensoresFiltrados.map(sensor => (
-          <div key={sensor.id} className="bg-white shadow-2xl rounded-lg overflow-hidden my-4">
+          <div key={sensor.id} className="bg-white border-4 border-sky-950 strong-shadow rounded-lg overflow-hidden my-4">
             <div className="p-5 border-b font-semibold text-black border-gray-200">
               <h3 className="text-lg ">ID: {sensor.id}</h3>
               <p className="">Nome pessoa: {sensor.nomePessoa}</p>

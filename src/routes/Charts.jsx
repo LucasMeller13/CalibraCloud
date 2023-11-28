@@ -19,7 +19,7 @@ const PieChartComponent = ({ data }) => (
         <PieChart width={400} height={300}>
         <Pie
         data={data}
-        cx={175}
+        cx={160}
         cy={148}
         labelLine={false}
         label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
@@ -45,7 +45,7 @@ const BarChartSensorQtData = ({ data }) => {
         
         <BarChart
             width={800}
-            height={300}
+            height={450}
             data={data}
             margin={{
                 top: 20, right: 30, left: 10, bottom: 10,

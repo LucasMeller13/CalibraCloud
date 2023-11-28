@@ -97,7 +97,7 @@ export default function Dashboard() {
   const countMap = new Map();
   
   data.forEach((sensor) => {
-    const tipoSensor = sensor.nomePessoa.toLowerCase();
+    const tipoSensor = maxWidthNome(sensor.nomePessoa.toLowerCase(),7);
     countMap.set(tipoSensor, (countMap.get(tipoSensor) || 0) + 1);
   });
 
@@ -111,6 +111,30 @@ export default function Dashboard() {
   
   return resultArray
     
+  }
+
+  function maxWidthDescricao(x) {
+    if (x.length > 60) {
+      return x.slice(0,63)+"..."
+    } else {
+      return x
+    }
+  }
+
+  function maxWidthEquacao(x) {
+    if (x.length > 32) {
+      return x.slice(0,33)+"..."
+    } else {
+      return x
+    }
+  }
+
+  function maxWidthNome(x,y) {
+    if (x.length > y) {
+      return x.slice(0,y+1)+"..."
+    } else {
+      return x
+    }
   }
 
   function returnQtData(data) {
@@ -170,36 +194,57 @@ export default function Dashboard() {
   return (
     <>
       <div className='p-3 rounded-2xl 
-                      strong-shadow bg-gradient-diagonal border-4 border-sky-950'>
-        <div className='m-10 p-3 underline-offset-8 underline decoration-2'>
+                      strong-shadow bg-gradient-diagonal border-4 border-sky-950 w-full'>
+        <div className='ml-10 mr-10 mb-10 mt-5 p-3 underline-offset-8 underline decoration-2'>
           <h1 className='text-5xl underline-offset-8'>Bem vindo, Carimbo.</h1>
         </div>
         <div className='.bg-gradient-diagonal'>
           <div className="grid grid-cols-3 gap-4">
-            <div className="bg-gray-800 p-4 m-3 rounded-lg strong-shadow hover:bg-gray-700 transition ease-in-out delay-50 hover:-translate-y-0.5">
+            <div className="bg-gray-800 p-4 m-3 rounded-lg strong-shadow border-2 border-sky-950 hover:bg-gray-700 transition ease-in-out delay-50 hover:-translate-y-0.5">
               <div className=' p-4 rounded-lg font-semibold text-xl text-white'>
                 <h2 className='text-2xl font-bold mb-4'>Último sensor adicionado:</h2>
-                <p className='mt-1'>Sensor ID: {selectedSensor[selectedSensor.length - 1].id}</p>
-                <p className='mt-1'>Nome: {selectedSensor[selectedSensor.length - 1].nomePessoa}</p>
-                <p className='mt-1'>Data de Cadastro: {returnDataFormat(selectedSensor[selectedSensor.length - 1].data)}</p>
-                <p className='mt-1'>Tipo de Sensor: {returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor)}</p>
-                <p className='mt-1'>R²: {selectedSensor[selectedSensor.length - 1].r2}</p>
-                <p className='mt-1'>Equação de Calibração:</p>
-                <p className='text-lg'>  {selectedSensor[selectedSensor.length - 1].equacaoCalibracao}</p>
-                <p className='break-words mt-1'>Descrição: {selectedSensor[selectedSensor.length - 1].descricao}</p>
+                <table className="table-auto">
+                  <tbody>
+                    <tr>
+                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Sensor ID</td>
+                      <td className='border-2 border-slate-600 p-2'>{selectedSensor[selectedSensor.length - 1].id}</td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Nome</td>
+                      <td className='border-2 border-slate-600 p-2'>{maxWidthNome(selectedSensor[selectedSensor.length - 1].nomePessoa,10)}</td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Data de Cadastro</td>
+                      <td className='border-2 border-slate-600 p-2'>{returnDataFormat(selectedSensor[selectedSensor.length - 1].data)}</td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>Tipo de Sensor</td>
+                      <td className='border-2 border-slate-600 p-2'>{returnNomeSensor(selectedSensor[selectedSensor.length - 1].tipoSensor)}</td>
+                    </tr>
+                    <tr>
+                      <td className='border-2 border-slate-600 p-2 pr-12 font-bold'>R²</td>
+                      <td className='border-2 border-slate-600 p-2'>{selectedSensor[selectedSensor.length - 1].r2}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className='border-r-2 border-l-2 border-b-2 border-slate-600 p-2'>
+                  <p className='mt-1'>Equação de Calibração:</p>
+                  <p className='text-lg'>{maxWidthEquacao(selectedSensor[selectedSensor.length - 1].equacaoCalibracao)}</p>
+                </div>
+                <p className='break-words border-r-2 border-l-2 border-b-2 border-slate-600 p-2'>Descrição: {maxWidthDescricao(selectedSensor[selectedSensor.length - 1].descricao)}</p>
               </div>
             </div>
-            <div className="strong-shadow p-4 m-3 col-span-2 bg-gray-300 rounded-lg transition ease-in-out delay-50 hover:-translate-y-0.5">
+            <div className="strong-shadow border-2 border-sky-950 p-4 m-3 col-span-2 bg-gray-300 rounded-lg transition ease-in-out delay-50 hover:-translate-y-0.5">
               <BarChartSensorQtData data={returnQtData(selectedSensor)} />
             </div>
           </div>
               <div className="grid grid-cols-3 gap-4 f">
-            <div className="strong-shadow bg-gray-800 hover:bg-gray-700 p-4 m-3 rounded-lg shadow-xl transition ease-in-out delay-50 hover:-translate-y-0.5">
+            <div className="strong-shadow border-2 border-sky-950 bg-gray-800 hover:bg-gray-700 p-4 m-3 rounded-lg shadow-xl transition ease-in-out delay-50 hover:-translate-y-0.5">
                 <div className=''>
                   <PieChartComponent data={returnsQtNome(selectedSensor)} />
                 </div>
                 </div>
-                <div className="strong-shadow p-4 m-3 col-span-2 bg-gray-300 rounded-lg transition ease-in-out delay-50 hover:-translate-y-0.5">
+                <div className="strong-shadow border-2 border-sky-950 p-4 m-3 col-span-2 bg-gray-300 rounded-lg transition ease-in-out delay-50 hover:-translate-y-0.5">
                   <BarChartSensorQtTipo data={returnsQtTipo(selectedSensor)} />
                 </div>
               </div>

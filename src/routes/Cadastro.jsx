@@ -6,6 +6,7 @@ import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 export default function Cadastro() {
   const [items, setItems] = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
+  const [messageMood, setMessageMood] = useState(false);
 
   const idGeneratedSensor = generateId();
   const todayDate = new Date();
@@ -19,108 +20,128 @@ export default function Cadastro() {
 
   function addItem(event) {
     event.preventDefault();
-
-    // esta é uma nova ideia de como pegar os valores do form
-    // diferente da aula de HOOKs em que incentivei o uso de useState
-    // um campo para cada form ou um objeto para todos os campos
-    // aqui estamos acessando direto o DOM do form e lendo os valores
-    // dos campos por seus IDs/name
     const form = event.currentTarget;
     const formData = new FormData(form);
-    if (
-      formData.get('nomePessoa') !== '' &&
-      formData.get('dropdownTipoSensor') !== '' &&
-      formData.get('descricaoCalibracao') !== '' &&
-      formData.get('equacaoCalibracao') !== ''
-    ) {
-      // objeto que representa nosso novo item
-      const newItem = {
-        id: idGeneratedSensor,
-        tipoSensor: formData.get('dropdownTipoSensor'),
-        r2: +formData.get('r2'),
-        ordemTendencia: +formData.get('ordemTendencia'),
-        data: dateJSX,
-        nomePessoa: formData.get('nomePessoa'),
-        descricao: formData.get('descricaoCalibracao'),
-        equacaoCalibracao: formData.get('equacaoCalibracao')
-      };
 
-      // mantando os itens já cadastrados e adicionando o novo no final
-      setItems([...items, newItem]);
+    const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja cadastrar o sensor (${idGeneratedSensor})?`);
+    
+    if (confirmacaoEdicaoUser) {
       
-      // resetando o form e apagando mensagens de erro antigas
-      form.reset();
-      setErrorMessage('');
+      if (
+        formData.get('nomePessoa') !== '' &&
+        formData.get('dropdownTipoSensor') !== '' &&
+        formData.get('descricaoCalibracao') !== '' &&
+        formData.get('equacaoCalibracao') !== ''
+      ) {
+        // objeto que representa nosso novo item
+        const newItem = {
+          id: idGeneratedSensor,
+          tipoSensor: formData.get('dropdownTipoSensor'),
+          r2: +formData.get('r2'),
+          ordemTendencia: +formData.get('ordemTendencia'),
+          data: dateJSX,
+          nomePessoa: formData.get('nomePessoa'),
+          descricao: formData.get('descricaoCalibracao'),
+          equacaoCalibracao: formData.get('equacaoCalibracao')
+        };
+
+        // mantando os itens já cadastrados e adicionando o novo no final
+        setItems([...items, newItem]);
       
+        // resetando o form e apagando mensagens de erro antigas
+        form.reset();
+        setMessageMood(true);
+        setErrorMessage('Cadastro feito!');
+      
+      } else {
+        setMessageMood(false)
+        setErrorMessage('Preencha todos os campos!');
+      }
     } else {
-      setErrorMessage('Preencha todos os campos!');
+      setMessageMood(false)
+      setErrorMessage('Usuário cancelou o cadastro.');
     }
   }
   return (
     <>
-      <div className="">
+      <div className="flex justify-center items-center">
         <form onSubmit={addItem}
         method="get"
-        className="mt-6 rounded-xl bg-gray-100 pl-6 pr-6 pb-6 pt-4">
-          <h3><strong>ID:</strong></h3>
-          <input
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            disabled={true}
-            value={idGeneratedSensor}></input>
-          
-          <label className="block text-black-600"><strong>Nome</strong></label>
-          <input
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            id="nomePessoa"
-            name="nomePessoa"
-            placeholder='Nome pessoa'
-          />
+          className="mt-10 rounded-xl text-lg bg-gray-100 w-5/6 pl-6 pr-6 pb-6 pt-4 border-4 border-sky-950 strong-shadow">
+          <div className='grid grid-cols-6 gap-4'>
+            <div>
+              <h3><strong>ID</strong></h3>
+              <input
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                disabled={true}
+                value={idGeneratedSensor}></input>
+            </div>
+            <div className='col-span-5'>
+              <label className="block text-black-600"><strong>Nome</strong></label>
+              <input
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                id="nomePessoa"
+                name="nomePessoa"
+                placeholder='Nome pessoa'
+                />
+            </div>
+          </div>
+            
+          <div className='grid grid-cols-4 gap-4'>
+            <div>
+              <h3 className='mt-3'><strong>Data de cadastro:</strong> </h3>
+              <input
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                disabled={true}
+                value={date}></input>
+            </div>
 
-          <h3 className='mt-3'><strong>Data de cadastro:</strong> </h3>
-          <input
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            disabled={true}
-            value={date}></input>
-          
-          <label className="block text-black-600 mt-3"><strong>Tipo do sensor</strong></label>
-          <select
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            id="dropdownTipoSensor"
-            name="dropdownTipoSensor"
-          >
-            <option value="celulaCarga">Célula de carga</option>
-            <option value="sensorDistancia">Sensor de distância</option>
-            <option value="sensorPressao">Sensor de pressão</option>
-            <option value="decibelimetro">Decibelímetro</option>
-            <option value="acelerometro">Acelerômetro</option>
-            <option value="extensometro">Extensômetro</option>
-            <option value="sensorTemperatura">Sensor de temperatura</option>
-          </select>
+            <div>
+              <label className="block text-black-600 mt-3"><strong>Tipo do sensor</strong></label>
+              <select
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                id="dropdownTipoSensor"
+                name="dropdownTipoSensor"
+              >
+                <option value="celulaCarga">Célula de carga</option>
+                <option value="sensorDistancia">Sensor de distância</option>
+                <option value="sensorPressao">Sensor de pressão</option>
+                <option value="decibelimetro">Decibelímetro</option>
+                <option value="acelerometro">Acelerômetro</option>
+                <option value="extensometro">Extensômetro</option>
+                <option value="sensorTemperatura">Sensor de temperatura</option>
+              </select>
+            </div>
+              
+            <div>
+              <label className="block text-black-600 mt-3">
+                <strong>Ordem da linha de tendência</strong>
+              </label>
+              <input
+                id="ordemTendencia"
+                name="ordemTendencia"
+                type="number"
+                defaultValue={1}
+                min="1"
+                max="10"
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+              />
+            </div>  
 
-          <label className="block text-black-600 mt-3">
-            <strong>Ordem da linha de tendência</strong>
-          </label>
-          <input
-            id="ordemTendencia"
-            name="ordemTendencia"
-            type="number"
-            defaultValue={1}
-            min="1"
-            max="10"
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-          />
-
-          <label className="block text-black-600 mt-3"><strong>R²</strong></label>
-          <input
-            id="r2"
-            name="r2"
-            type="number"
-            defaultValue={1}
-            min="0.0"
-            max="1.0"
-            step="0.001"
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-          />
+            <div>
+              <label className="block text-black-600 mt-3"><strong>R²</strong></label>
+              <input
+                id="r2"
+                name="r2"
+                type="number"
+                defaultValue={1}
+                min="0.0"
+                max="1.0"
+                step="0.001"
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+              />
+            </div>  
+          </div>
 
           <label className="block text-black-600 mt-3"><strong>Descrição</strong></label>
           <input
@@ -141,16 +162,18 @@ export default function Cadastro() {
           />
           
           {!!errorMessage && (
-            <div className="mt-1 font-semibold text-red-500">
+          <div className="mt-1 font-semibold"
+              style={{ color: messageMood ? 'green' : 'red' }}>
               {errorMessage}
-            </div>
-          )}
+          </div>
+            )}
           
           <button
             type="submit"
-            className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"
+            className="rounded bg-cyan-300 px-4 py-2 text-black font-semibold rounded-lg border-2 border-black hover:bg-cyan-400 mt-5
+                       transition ease-in-out delay-50 hover:-translate-y-0.5"
           >
-            Cadastrar sensor
+            Cadastrar
           </button>
         </form>
       </div>

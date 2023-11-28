@@ -78,28 +78,34 @@ export default function Consulta() {
 
   return (
     <>
-    <div>
-    <form method="get" className="rounded-xl bg-gray-100 border-4 border-sky-950 pl-6 pr-6 pb-6 pt-4" onSubmit={consultarSensor}>
+    <div className='flex justify-center items-center'>
+    <form method="get" className="rounded-xl text-lg bg-gray-100 w-4/6 border-4 mt-10 border-sky-950 strong-shadow pl-6 pr-6 pb-6 pt-4" onSubmit={consultarSensor}>
         
-        <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
-        <input
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            name="sensorId"
-            id="sensorId"
-            placeholder="Sensor ID"
-            maxLength="5"
-        />
+        <div className='grid grid-cols-6 gap-4'>
+          <div>
+            <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
+            <input
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                name="sensorId"
+                id="sensorId"
+                placeholder="Sensor ID"
+                maxLength="5"
+            />
+          </div>
+        
+          <div className='col-span-5'>
+            <label className="block text-black-600"><strong>Nome</strong></label>
+            <input
+                className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
+                id="nomePessoa"
+                name="nomePessoa"
+                placeholder='Nome pessoa'
+              />
+          </div>
 
-       
-        <label className="block text-black-600 mt-3"><strong>Nome</strong></label>
-        <input
-            className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
-            id="nomePessoa"
-            name="nomePessoa"
-            placeholder='Nome pessoa'
-        />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
+        </div> 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
           <label className="block text-black-600 mt-3"><strong>Tipo do sensor</strong></label>
           <select
             className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
@@ -144,7 +150,8 @@ export default function Consulta() {
 
         <button
             type="submit"
-            className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600 mt-5"
+            className="rounded bg-cyan-300 px-4 py-2 text-black font-semibold rounded-lg border-2 border-black hover:bg-cyan-400 mt-5
+                       transition ease-in-out delay-50 hover:-translate-y-0.5"
         >
             Consultar
         </button>
@@ -158,7 +165,7 @@ export default function Consulta() {
         <div className="text-center text-black italic text-lg mt-5"><strong>Nenhum sensor encontrado.</strong></div>
       ) : (
         sensoresFiltrados.map(sensor => (
-          <div key={sensor.id} className="bg-white rounded-lg overflow-hidden my-4">
+          <div key={sensor.id} className="bg-white rounded-lg overflow-hidden my-4 border-4 border-sky-950 strong-shadow">
             <div className="p-5 border-b font-semibold text-black border-gray-200">
               <h3 className="text-lg">ID: {sensor.id}</h3>
               <p className="">Nome pessoa: {sensor.nomePessoa}</p>
