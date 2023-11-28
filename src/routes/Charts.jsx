@@ -9,7 +9,7 @@ const data = [
   { name: 'Group D', value: 200 },
 ];*/
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#87CEEB', '#00C49F', '#FFBB28', '#FF8042', '#DC143C', '#32CD32', '#FF69B4'];
 
 const PieChartComponent = ({ data }) => (
     <>
