@@ -3,7 +3,7 @@ import { useListaCadastro} from '../context/ListaCadastroContext';
 
 export default function Consulta() {
 
-  const [selectedSensor, setSelectedSensor] = useListaCadastro();
+  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
 

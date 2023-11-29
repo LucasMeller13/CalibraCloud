@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useListaCadastro} from '../context/ListaCadastroContext';
 
 export default function Remocao() {
-  const [selectedSensor, setSelectedSensor] = useListaCadastro();
+  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);

@@ -4,7 +4,8 @@ import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 
 
 export default function Cadastro() {
-  const [items, setItems] = useListaCadastro();
+  //const [items, setItems] = useListaCadastro();
+  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [messageMood, setMessageMood] = useState(false);
 
@@ -15,8 +16,8 @@ export default function Cadastro() {
   let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
 
   useEffect(() => {
-    console.log("Items after update:", items);
-  }, [items]);
+    console.log("Items after update:", selectedSensor);
+  }, [selectedSensor]);
 
   function addItem(event) {
     event.preventDefault();
@@ -46,7 +47,7 @@ export default function Cadastro() {
         };
 
         // mantando os itens já cadastrados e adicionando o novo no final
-        setItems([...items, newItem]);
+        setSelectedSensor([...selectedSensor, newItem]);
       
         // resetando o form e apagando mensagens de erro antigas
         form.reset();

@@ -3,7 +3,7 @@ import { useListaCadastro } from '../context/ListaCadastroContext';
 import { PieChartComponent, BarChartSensorQtData, BarChartSensorQtTipo } from '../routes/Charts'
 
 export default function Dashboard() {
-  const [selectedSensor, setSelectedSensor] = useListaCadastro();
+  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
@@ -190,6 +190,8 @@ export default function Dashboard() {
       return "Sensor de temperatura"
     }
   }
+
+  console.log(selectedSensor)
   
   return (
     <>

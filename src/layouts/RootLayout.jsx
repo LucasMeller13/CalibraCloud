@@ -5,7 +5,6 @@ export default function RootLayout() {
   const [isScrollingHeader, setIsScrollingHeader] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
-  const lastPos = useRef(0);
 
   const navLinkClassName =
     'mr-6 mt-4 block text-base font-medium text-lg hover:text-white-600 md:mt-0 md:inline-block';
@@ -14,33 +13,6 @@ export default function RootLayout() {
     event.preventDefault();
     setIsMenuOpen(!isMenuOpen);
   }
-
-  /*
-  const handHeaderScroll = useCallback(() => {
-    const header = headerRef?.current;
-    const currPos = document.documentElement.scrollTop;
-    //console.log(lastPos.current);
-    if (header) {
-      if (currPos > +lastPos.current) {
-        if (currPos > header.offsetHeight) {
-          setIsScrollingHeader(true);
-        }
-      } else {
-        setIsScrollingHeader(false);
-      }
-    }
-
-    lastPos.current = currPos;
-  }, [headerRef, lastPos, setIsScrollingHeader]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handHeaderScroll, false);
-
-    return () => {
-      window.removeEventListener('scroll', handHeaderScroll, false);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);*/
 
   return (
     <>
@@ -54,7 +26,7 @@ export default function RootLayout() {
           <div className="sm:mr-8">
             <div className="display: flex">
               <img src="./src/images/logo.svg" width="40px" />
-              <Link className="flex items-center" to="/">
+              <Link className="flex items-center" to="/dashboard">
                 <span className="self-center text-2xl font-semibold text-white ml-1 mb-1 mr-5">
                   CalibraCloud
                 </span>
@@ -67,7 +39,7 @@ export default function RootLayout() {
             }`}
           >
             <NavLink
-              to="/"
+              to="/dashboard"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }

@@ -3,20 +3,28 @@ import { useEffect, useState, useContext, createContext } from 'react';
 import Sensores from '../sensors.json';
 
 
-const ListaCadastroContext = createContext([[], () => { }]);
+const ListaCadastroContext = createContext({});
 
 export function ListaCadastroProvider(props) {
 
-  const [items, setItems] = useState(Sensores);
+  const [selectedSensor, setSelectedSensor] = useState(Sensores);
+  const [nomeLogin, setNomeLogin] = useState(null);
 
   useEffect(() => {
 
-    if (items.length > 0) {
-      localStorage.setItem('items', JSON.stringify(items));
+    if (selectedSensor.length > 0) {
+      localStorage.setItem('items', JSON.stringify(selectedSensor));
     }
-  }, [items]);
+  }, [selectedSensor]);
 
-  return <ListaCadastroContext.Provider value={[items, setItems]} {...props} />;
+  const contextValue = {
+    selectedSensor,
+    setSelectedSensor,
+    nomeLogin,
+    setNomeLogin, 
+  };
+
+  return <ListaCadastroContext.Provider value={contextValue} {...props} />;
 }
 
 export function useListaCadastro() {

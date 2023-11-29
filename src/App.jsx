@@ -2,16 +2,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { ListaCadastroProvider } from './context/ListaCadastroContext';
 import RootLayout from './layouts/RootLayout';
-import Home from './routes/Home';
-import ListaCompras from './routes/ListaCompras';
-import Produtos from './routes/Produtos';
-import ProdutoExibe from './routes/ProdutoExibe';
 
 import Dashboard from './routes/Dashboard';
 import Cadastro from './routes/Cadastro';
 import Consulta from './routes/Consulta';
 import Edicao from './routes/Edicao';
 import Remocao from './routes/Remocao';
+import Login from './routes/Login';
 
 /**
  * Esse `router` abaixo é uma espécie de "configuração" do rotas da aplicação.
@@ -37,7 +34,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: '/',
+        path: '/dashboard',
         element: <Dashboard />,
       },
       {
@@ -60,12 +57,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-/**
- * A função `App` é a principal de nosso projeto, é ela que "liga" e configura nossa aplicação de React.
- * Apesar de termos um exemplo de Context/Provider (ListaComprasProvider) também instalado aqui, o principal
- * a ser aprendido é o uso do do `RouterProvider` que é o que faz a mágica de "ligar" as rotas que definimos
- * mais a cima e fazer o "avançar e voltar" do navegador funcionar corretamente.
- */
 export default function App() {
   return (
     <ListaCadastroProvider>

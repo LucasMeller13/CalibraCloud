@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useListaCadastro} from '../context/ListaCadastroContext';
 
 export default function Edicao() {
-  const [selectedSensor, setSelectedSensor] = useListaCadastro();
+  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
   const [isValidId, setIsValidId] = useState(false);
-  const [items, setItems] = useListaCadastro();
+  //const [items, setItems] = useListaCadastro();
   const [messageMood, setMessageMood] = useState(false);
 
   const [nomeInput, SetNomeInput] = useState('');
@@ -82,7 +82,7 @@ export default function Edicao() {
           equacaoCalibracao: equacaoCalibracaoForm
         };
 
-        setItems(items.map(item => {
+        setSelectedSensor(selectedSensor.map(item => {
           if (item.id === newItem.id) {
             return newItem;
           }
