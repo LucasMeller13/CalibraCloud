@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 
 
 export default function Cadastro() {
-  //const [items, setItems] = useListaCadastro();
   const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [messageMood, setMessageMood] = useState(false);

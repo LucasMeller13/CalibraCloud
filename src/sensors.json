@@ -7,7 +7,7 @@
     "data": "2023-05-01",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 10x^2"
+    "equacaoCalibracao": "y = 10x^2"
   },
   {
     "id": "l4542",
@@ -17,7 +17,7 @@
     "data": "2023-04-12",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 2342.324x^5"
+    "equacaoCalibracao": "y = 2342.324x^5"
   },
   {
     "id": "l3214",
@@ -27,7 +27,7 @@
     "data": "2023-01-23",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 2342.324x^4"
+    "equacaoCalibracao": "y = 2342.324x^4"
   },
   {
     "id": "x34rt",
@@ -37,7 +37,7 @@
     "data": "2023-11-23",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 23x^2"
+    "equacaoCalibracao": "y = 23x^2"
   },
   {
     "id": "tr345",
@@ -47,7 +47,7 @@
     "data": "2023-05-11",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 324.232x"
+    "equacaoCalibracao": "y = 324.232x"
   },
   {
     "id": "te123",
@@ -57,7 +57,7 @@
     "data": "2023-05-13",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 324.232x^2 + 234.1x + 2"
+    "equacaoCalibracao": "y = 324.232x^2 + 234.1x + 2"
   },
   {
     "id": "wer12",
@@ -67,7 +67,7 @@
     "data": "2023-08-11",
     "nomePessoa": "Carimbo",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 124.54x^3 - 324.232x^2 + 234.1x + 2"
+    "equacaoCalibracao": "y = 124.54x^3 - 324.232x^2 + 234.1x + 2"
   },
   {
     "id": "das56",
@@ -77,7 +77,7 @@
     "data": "2023-08-21",
     "nomePessoa": "Joao",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+    "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
   {
     "id": "fgds4",
@@ -87,7 +87,7 @@
     "data": "2023-05-21",
     "nomePessoa": "Joao",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+    "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
   {
     "id": "qew21",
@@ -97,7 +97,7 @@
     "data": "2022-01-01",
     "nomePessoa": "Cleber",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+    "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
   {
     "id": "453fd",
@@ -107,6 +107,6 @@
     "data": "2021-10-24",
     "nomePessoa": "Cleber",
     "descricao": "blabla",
-    "equacaoCalibracao": "f(x) = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+    "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   }
 ]

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useListaCadastro } from '../context/ListaCadastroContext';
-import { Outlet, Link, NavLink, useNavigate , Navigate} from 'react-router-dom';
-import App from "../App";
+import { Navigate} from 'react-router-dom';
 
 export default function Login() {
     const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin } = useListaCadastro();

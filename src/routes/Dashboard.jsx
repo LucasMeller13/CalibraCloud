@@ -7,27 +7,10 @@ export default function Dashboard() {
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
-  const [messageMood, setMessageMood] = useState(false);
 
   function returnDataFormat(x) {
     let [year, month, day] = x.split('-');
     return `${day}/${month}/${year}`;
-  }
-
-  function checkId(event) {
-    setErrorMessage('');
-    const idSensorInput = event.target.value;
-    const sensorPresente = selectedSensor.some(sensor => sensor.id === idSensorInput);
-    //setErrorMessage('');
-    setIsValidId(sensorPresente);
-
-    if (sensorPresente) {
-      const sensorEncontrado = selectedSensor.find(sensor => sensor.id === idSensorInput)
-      SetSensoresFiltrados([sensorEncontrado])
-
-    } else {
-      SetSensoresFiltrados(selectedSensor)
-    }
   }
 
   function returnNomeMes(x) {
@@ -86,8 +69,7 @@ export default function Dashboard() {
     y,
     }));
 
-    //console.log(data)
-    console.log(resultArray)
+    //console.log(resultArray)
     
     return resultArray
     
