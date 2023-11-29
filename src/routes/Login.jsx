@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useListaCadastro } from '../context/ListaCadastroContext';
-import { Outlet, Link, NavLink } from 'react-router-dom';
+import { Outlet, Link, NavLink, useNavigate , Navigate} from 'react-router-dom';
 import App from "../App";
 
 export default function Login() {
     const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin } = useListaCadastro();
     const [errorMessage, setErrorMessage] = useState('');
     const [messageMood, setMessageMood] = useState(false);
+
 
     function validateLogin(event) {
         event.preventDefault();
@@ -18,8 +19,10 @@ export default function Login() {
         formData.get('senha') !== '' 
         ) {
         
-        setNomeLogin(formData.get('login'))
+        //setNomeLogin(formData.get('login'))
         form.reset();
+        setNomeLogin(formData.get('login'))
+        console.log(nomeLogin)
             
       } else {
         setMessageMood(false)
@@ -46,6 +49,7 @@ export default function Login() {
                     name="senha"
                     id="senha"
                     placeholder="Senha"
+                    type='password'
                 />
 
                 {!!errorMessage && (
@@ -54,12 +58,11 @@ export default function Login() {
                 {errorMessage}
                 </div>
                 )}
-                
+
                 {nomeLogin !== null ?
-                    <NavLink to='/dashboard'>
-                        <App />
-                    </NavLink>
-                    : 'continue'}
+                    <Navigate replace to="/root/dashboard" />
+                    : null }
+                
 
                 <div className='flex justify-end'>
                     <button

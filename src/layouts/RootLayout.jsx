@@ -25,8 +25,8 @@ export default function RootLayout() {
         <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between">
           <div className="sm:mr-8">
             <div className="display: flex">
-              <img src="./src/images/logo.svg" width="40px" />
-              <Link className="flex items-center" to="/dashboard">
+              <img src="/images/logo.svg" width="40px" />
+              <Link className="flex items-center" to="/root/dashboard">
                 <span className="self-center text-2xl font-semibold text-white ml-1 mb-1 mr-5">
                   CalibraCloud
                 </span>
@@ -39,7 +39,7 @@ export default function RootLayout() {
             }`}
           >
             <NavLink
-              to="/dashboard"
+              to="/root/dashboard"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
@@ -48,7 +48,7 @@ export default function RootLayout() {
               Dashboard
             </NavLink>
             <NavLink
-              to="/cadastro"
+              to="/root/cadastro"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
@@ -56,7 +56,7 @@ export default function RootLayout() {
               Cadastro
             </NavLink>
             <NavLink
-              to="/consulta"
+              to="/root/consulta"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
@@ -64,7 +64,7 @@ export default function RootLayout() {
               Consulta
             </NavLink>
             <NavLink
-              to="/edicao"
+              to="/root/edicao"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
@@ -72,7 +72,7 @@ export default function RootLayout() {
               Edição
             </NavLink>
             <NavLink
-              to="/remocao"
+              to="/root/remocao"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
               }

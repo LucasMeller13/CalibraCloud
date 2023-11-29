@@ -31,26 +31,30 @@ import Login from './routes/Login';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Login />
+  },
+  {
+    path: '/root',
     element: <RootLayout />,
     children: [
       {
-        path: '/dashboard',
+        path: '/root/dashboard',
         element: <Dashboard />,
       },
       {
-        path: '/cadastro',
+        path: '/root/cadastro',
         element: <Cadastro />,
       },
       {
-        path: '/consulta',
+        path: '/root/consulta',
         element: <Consulta />,
       },
       {
-        path: '/edicao',
+        path: '/root/edicao',
         element: <Edicao />,
       },
       {
-        path: '/remocao',
+        path: '/root/remocao',
         element: <Remocao />,
       },
     ],

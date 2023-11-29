@@ -32,7 +32,7 @@ export default function Cadastro() {
         formData.get('nomePessoa') !== '' &&
         formData.get('dropdownTipoSensor') !== '' &&
         formData.get('descricaoCalibracao') !== '' &&
-        formData.get('equacaoCalibracao') !== ''
+        checkEquacao(formData.get('equacaoCalibracao'))
       ) {
         // objeto que representa nosso novo item
         const newItem = {
@@ -41,7 +41,7 @@ export default function Cadastro() {
           r2: +formData.get('r2'),
           ordemTendencia: +formData.get('ordemTendencia'),
           data: dateJSX,
-          nomePessoa: formData.get('nomePessoa'),
+          nomePessoa: nomeLogin,
           descricao: formData.get('descricaoCalibracao'),
           equacaoCalibracao: formData.get('equacaoCalibracao')
         };
@@ -55,14 +55,29 @@ export default function Cadastro() {
         setErrorMessage('Cadastro feito!');
       
       } else {
-        setMessageMood(false)
-        setErrorMessage('Preencha todos os campos!');
+        if (checkEquacao(formData.get('equacaoCalibracao'))) {
+          setMessageMood(false)
+          setErrorMessage('Preencha todos os campos!');
+        } else {
+          setMessageMood(false)
+          setErrorMessage('Equação deve ter os caracteres "y","=" e "x".');
+        }
+        
       }
     } else {
       setMessageMood(false)
       setErrorMessage('Usuário cancelou o cadastro.');
     }
   }
+
+  function checkEquacao(x) {
+    if (x.includes('y') && x.includes('=') && x.includes('x') && x !== '') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <>
       <div className="flex justify-center items-center">
@@ -84,6 +99,8 @@ export default function Cadastro() {
                 id="nomePessoa"
                 name="nomePessoa"
                 placeholder='Nome pessoa'
+                value={nomeLogin}
+                disabled={true}
                 />
             </div>
           </div>

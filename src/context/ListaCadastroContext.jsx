@@ -17,6 +17,8 @@ export function ListaCadastroProvider(props) {
     }
   }, [selectedSensor]);
 
+  //setNomeLogin(localStorage.getItem('login'))
+
   const contextValue = {
     selectedSensor,
     setSelectedSensor,
