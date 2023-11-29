@@ -19,4 +19,4 @@ O objetivo do projeto **CalibraCloud** é organizar em um único lugar na nuvem 
 Os principais beneficiários do projeto são professores e estagiários que utilizam sensores e que necessitam que esses dispositivos sejam devidamente calibrados.
 
 ### Tecnologias
-As principais tecnologias que serão usadas são o React e a biblioteca Radix.
+As principais tecnologias que serão usadas são o React e a <s>biblioteca Radix</s>.
