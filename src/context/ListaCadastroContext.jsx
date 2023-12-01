@@ -7,15 +7,18 @@ const ListaCadastroContext = createContext({});
 
 export function ListaCadastroProvider(props) {
 
-  const [selectedSensor, setSelectedSensor] = useState(Sensores);
-  const [nomeLogin, setNomeLogin] = useState(null);
+  const salvosSensores = JSON.parse(localStorage.getItem('selectedSensor')) || Sensores;
+  const salvoNome = JSON.parse(localStorage.getItem('nomeLogin')) || null;
+  const [selectedSensor, setSelectedSensor] = useState(salvosSensores);
+  const [nomeLogin, setNomeLogin] = useState(salvoNome);
 
   useEffect(() => {
-
-    if (selectedSensor.length > 0) {
-      localStorage.setItem('items', JSON.stringify(selectedSensor));
-    }
+    localStorage.setItem('selectedSensor', JSON.stringify(selectedSensor));
   }, [selectedSensor]);
+
+  useEffect(() => {
+    localStorage.setItem('nomeLogin', JSON.stringify(nomeLogin));
+  }, [nomeLogin]);
 
   //setNomeLogin(localStorage.getItem('login'))
 

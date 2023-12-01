@@ -89,7 +89,7 @@ export default function Dashboard() {
   }));
 
   //console.log(data)
-  console.log(resultArray)
+  //console.log(resultArray)
   
   return resultArray
     
@@ -150,7 +150,7 @@ export default function Dashboard() {
       }
     }
 
-    console.log(tempArray)
+    //console.log(tempArray)
     
   return tempArray;
 }
@@ -173,7 +173,7 @@ export default function Dashboard() {
     }
   }
 
-  console.log(selectedSensor)
+  //console.log(selectedSensor)
   
   return (
     <>
