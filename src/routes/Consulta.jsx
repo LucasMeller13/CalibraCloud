@@ -94,12 +94,12 @@ export default function Consulta() {
           </div>
         
           <div className='col-span-5'>
-            <label className="block text-black-600"><strong>Nome</strong></label>
+            <label className="block text-black-600"><strong>Usuário</strong></label>
             <input
                 className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
                 id="nomePessoa"
                 name="nomePessoa"
-                placeholder='Nome pessoa'
+                placeholder='Nome usuário'
               />
           </div>
 
@@ -170,7 +170,7 @@ export default function Consulta() {
           <div key={sensor.id} className="bg-white rounded-lg overflow-hidden my-4 border-4 border-sky-950 strong-shadow">
             <div className="p-5 border-b font-semibold text-black border-gray-200">
               <h3 className="text-lg">ID: {sensor.id}</h3>
-              <p className="">Nome pessoa: {sensor.nomePessoa}</p>
+              <p className="">Usuário: {sensor.nomePessoa}</p>
             </div>
             <div className="p-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

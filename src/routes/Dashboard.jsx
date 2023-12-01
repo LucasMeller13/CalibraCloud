@@ -194,7 +194,7 @@ export default function Dashboard() {
                       <td className='border-2 border-sky-600 p-2'>{selectedSensor[selectedSensor.length - 1].id}</td>
                     </tr>
                     <tr>
-                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Nome</td>
+                      <td className='border-2 border-sky-600 p-2 pr-2 font-bold'>Usuário</td>
                       <td className='border-2 border-sky-600 p-2'>{maxWidthNome(selectedSensor[selectedSensor.length - 1].nomePessoa,10)}</td>
                     </tr>
                     <tr>

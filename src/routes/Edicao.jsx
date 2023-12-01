@@ -123,12 +123,12 @@ export default function Edicao() {
           </div>
 
           <div className='col-span-5'>
-            <label className="block text-black-600"><strong>Nome</strong></label>
+            <label className="block text-black-600"><strong>Usuário</strong></label>
             <input
                 className="mt-1 block w-full rounded border border-gray-300 p-1.5 focus:border-teal-500 focus:ring focus:ring-teal-500 focus:ring-opacity-50"
                 id="nomePessoa"
                 name="nomePessoa"
-                placeholder='Nome pessoa'
+                placeholder='Nome usuário'
                 onChange={(e) => SetNomeInput(e.target.value)}
                 value={nomeInput}
                 disabled={isDisabled}

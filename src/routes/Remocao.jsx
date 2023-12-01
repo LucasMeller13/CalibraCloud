@@ -122,7 +122,7 @@ export default function Remocao() {
           <div key={sensor.id} className="bg-white border-4 border-sky-950 strong-shadow rounded-lg overflow-hidden my-4">
             <div className="p-5 border-b font-semibold text-black border-gray-200">
               <h3 className="text-lg ">ID: {sensor.id}</h3>
-              <p className="">Nome pessoa: {sensor.nomePessoa}</p>
+              <p className="">Usuário: {sensor.nomePessoa}</p>
             </div>
             <div className="p-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
