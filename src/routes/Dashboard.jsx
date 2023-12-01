@@ -88,7 +88,7 @@ export default function Dashboard() {
   y,
   }));
 
-  //console.log(data)
+  console.log(data)
   //console.log(resultArray)
   
   return resultArray

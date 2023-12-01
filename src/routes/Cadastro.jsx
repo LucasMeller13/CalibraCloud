@@ -10,7 +10,7 @@ export default function Cadastro() {
   const idGeneratedSensor = generateId();
   const todayDate = new Date();
 
-  let dateJSX = todayDate.getFullYear() + "-" + parseInt(todayDate.getMonth()+1) + "-" + todayDate.getDate()
+  let dateJSX = todayDate.getFullYear() + "-" + parseInt(todayDate.getMonth()+1) + "-" + (+todayDate.getDate() > 10 ? todayDate.getDate() : '0' + todayDate.getDate())
   let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
 
   useEffect(() => {

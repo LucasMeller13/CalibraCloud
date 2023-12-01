@@ -12,6 +12,8 @@ export function ListaCadastroProvider(props) {
   const [selectedSensor, setSelectedSensor] = useState(salvosSensores);
   const [nomeLogin, setNomeLogin] = useState(salvoNome);
 
+  //localStorage.clear()
+
   useEffect(() => {
     localStorage.setItem('selectedSensor', JSON.stringify(selectedSensor));
   }, [selectedSensor]);

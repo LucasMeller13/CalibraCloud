@@ -15,17 +15,23 @@ export default function Login() {
 
         if (
         formData.get('login') !== '' &&
-        formData.get('senha') !== '' 
+        formData.get('senha') !== '' &&
+        !formData.get('login').includes(' ')
         ) {
         
         //setNomeLogin(formData.get('login'))
         form.reset();
-        setNomeLogin(formData.get('login'))
+        setNomeLogin(formData.get('login').toLowerCase())
         console.log(nomeLogin)
             
-      } else {
-        setMessageMood(false)
-        setErrorMessage('Preencha todos os campos!');
+        } else {
+            if (formData.get('login').includes(' ')) {
+                setMessageMood(false)
+                setErrorMessage('Login usuário não pode ter espaços!');
+            } else {
+                setMessageMood(false)
+                setErrorMessage('Preencha todos os campos!');
+            }
       }
         
     }

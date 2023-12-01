@@ -5,7 +5,7 @@
     "r2": 0.98,
     "ordemTendencia": 2,
     "data": "2023-05-01",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 10x^2"
   },
@@ -15,7 +15,7 @@
     "r2": 0.9345,
     "ordemTendencia": 5,
     "data": "2023-04-12",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 2342.324x^5"
   },
@@ -25,7 +25,7 @@
     "r2": 0.9,
     "ordemTendencia": 4,
     "data": "2023-01-23",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 2342.324x^4"
   },
@@ -35,7 +35,7 @@
     "r2": 0.942,
     "ordemTendencia": 2,
     "data": "2023-11-23",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 23x^2"
   },
@@ -45,7 +45,7 @@
     "r2": 0.891,
     "ordemTendencia": 1,
     "data": "2023-05-11",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 324.232x"
   },
@@ -55,7 +55,7 @@
     "r2": 0.911,
     "ordemTendencia": 2,
     "data": "2023-05-13",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 324.232x^2 + 234.1x + 2"
   },
@@ -65,7 +65,7 @@
     "r2": 0.903,
     "ordemTendencia": 3,
     "data": "2023-08-11",
-    "nomePessoa": "Carimbo",
+    "nomePessoa": "lucas",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 124.54x^3 - 324.232x^2 + 234.1x + 2"
   },
@@ -75,7 +75,7 @@
     "r2": 0.912,
     "ordemTendencia": 3,
     "data": "2023-08-21",
-    "nomePessoa": "Joao",
+    "nomePessoa": "joao",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
@@ -85,7 +85,7 @@
     "r2": 0.94,
     "ordemTendencia": 3,
     "data": "2023-05-21",
-    "nomePessoa": "Joao",
+    "nomePessoa": "joao",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
@@ -95,7 +95,7 @@
     "r2": 0.89,
     "ordemTendencia": 3,
     "data": "2022-01-01",
-    "nomePessoa": "Cleber",
+    "nomePessoa": "cleber",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   },
@@ -105,7 +105,7 @@
     "r2": 0.982,
     "ordemTendencia": 3,
     "data": "2021-10-24",
-    "nomePessoa": "Cleber",
+    "nomePessoa": "cleber",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
   }
