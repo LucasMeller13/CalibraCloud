@@ -6,6 +6,7 @@ export default function Consulta() {
   const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   function returnDataFormat(x) {
     let [year, month, day] = x.split('-');

@@ -47,7 +47,7 @@ export default function Remocao() {
     }
   }
 
-  function consultarSensor(event){
+  function removerSensor(event){
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -81,7 +81,7 @@ export default function Remocao() {
   return (
     <>
     <div className='flex justify-center items-center'>
-    <form method="get" className="rounded-xl text-lg mt-10 bg-gray-100 w-1/2 pl-6 pr-6 pb-6 pt-4 border-4 border-sky-950 strong-shadow" onSubmit={consultarSensor}>
+    <form method="get" className="rounded-xl text-lg mt-10 bg-gray-100 w-2/6 pl-6 pr-6 pb-6 pt-4 border-4 border-sky-950 strong-shadow" onSubmit={removerSensor}>
         
         <label htmlFor="sensorId" className="block text-black-600"><strong>ID</strong></label>
         <input

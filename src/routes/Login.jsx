@@ -3,9 +3,10 @@ import { useListaCadastro } from '../context/ListaCadastroContext';
 import { Navigate} from 'react-router-dom';
 
 export default function Login() {
-    const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin } = useListaCadastro();
+    const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
     const [errorMessage, setErrorMessage] = useState('');
     const [messageMood, setMessageMood] = useState(false);
+    const [acesso, setAcesso] = useState(false)
 
 
     function validateLogin(event) {
@@ -18,11 +19,23 @@ export default function Login() {
         formData.get('senha') !== '' &&
         !formData.get('login').includes(' ')
         ) {
+
+            const nomePessoa = (formData.get('login')).toLowerCase()
+            const usuarioEncontrado = usuarios.some(usuario => usuario.nomePessoa === nomePessoa);
+
+            if (usuarioEncontrado) {
+                form.reset();
+                setNomeLogin(formData.get('login').toLowerCase())
+                console.log(nomeLogin)
+                setAcesso(true)
+            } else {
+                setMessageMood(false)
+                setErrorMessage(`Usuário ${nomePessoa} não encontrado!`)
+                setAcesso(false)
+                form.reset()
+            }
         
-        //setNomeLogin(formData.get('login'))
-        form.reset();
-        setNomeLogin(formData.get('login').toLowerCase())
-        console.log(nomeLogin)
+        
             
         } else {
             if (formData.get('login').includes(' ')) {
@@ -64,7 +77,7 @@ export default function Login() {
                 </div>
                 )}
 
-                {nomeLogin !== null ?
+                {nomeLogin !== null && acesso ?
                     <Navigate replace to="/root/dashboard" />
                     : null }
                 

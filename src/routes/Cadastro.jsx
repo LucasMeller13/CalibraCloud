@@ -3,7 +3,7 @@ import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
 
 
 export default function Cadastro() {
-  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
+  const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [messageMood, setMessageMood] = useState(false);
 

@@ -33,8 +33,12 @@ export default function CadastroUsuario() {
                 !checkUser(formData.get('nomePessoa').toLowerCase())
             ) {
 
+                const maiorId = usuarios.reduce((maxId, current) => {
+                        return (current.id > maxId) ? current.id : maxId;
+                    }, 0);
+
                 const novoUsuario = {
-                    id: usuarios.length + 1,
+                    id: maiorId + 1,
                     nomePessoa: formData.get('nomePessoa').toLowerCase(),
                     descricaoPessoa: formData.get('descricaoPessoa'),
                     dataCadastro: dateJSX
