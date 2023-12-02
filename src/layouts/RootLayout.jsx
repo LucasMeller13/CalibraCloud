@@ -1,5 +1,4 @@
-import { DialogTitle } from '@radix-ui/themes';
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef} from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
 
 export default function RootLayout() {
@@ -40,6 +39,7 @@ export default function RootLayout() {
             }`}
           >
             <NavLink
+              title="Dashboard"
               to="/root/dashboard"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
@@ -151,5 +151,3 @@ export default function RootLayout() {
     </>
   );
 }
-
-//<div className="mx-auto max-w-5xl"> 

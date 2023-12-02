@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+import { useState } from 'react';
+import { useListaCadastro } from '../context/ListaCadastroContext';
 import { Navigate } from 'react-router-dom';
 
 export default function RemocaoUsuario() {

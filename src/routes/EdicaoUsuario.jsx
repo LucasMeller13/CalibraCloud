@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+import { useState } from 'react';
+import { useListaCadastro } from '../context/ListaCadastroContext';
 import { Navigate} from 'react-router-dom';
 
 export default function EdicaoUsuario() {
@@ -41,7 +41,7 @@ export default function EdicaoUsuario() {
 
         const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja atualizar o usuário ${formData.get('nomePessoa')}?`);
 
-        console.log(usuarios)
+        //console.log(usuarios)
 
         if (confirmacaoEdicaoUser) {
             if (

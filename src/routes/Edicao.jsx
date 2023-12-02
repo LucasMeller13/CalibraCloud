@@ -132,7 +132,7 @@ export default function Edicao() {
                 placeholder='Nome usuário'
                 onChange={(e) => SetNomeInput(e.target.value)}
                 value={nomeInput}
-                disabled={isDisabled}
+                disabled={true}
               />
           </div>
         </div>

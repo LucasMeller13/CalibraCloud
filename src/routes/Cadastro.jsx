@@ -13,9 +13,10 @@ export default function Cadastro() {
   let dateJSX = todayDate.getFullYear() + "-" + parseInt(todayDate.getMonth()+1) + "-" + (+todayDate.getDate() > 10 ? todayDate.getDate() : '0' + todayDate.getDate())
   let date = todayDate.getDate() + "/"+ parseInt(todayDate.getMonth()+1) +"/"+todayDate.getFullYear();
 
+  /*
   useEffect(() => {
     console.log("Items after update:", selectedSensor);
-  }, [selectedSensor]);
+  }, [selectedSensor]); */
 
   function addItem(event) {
     event.preventDefault();
