@@ -61,7 +61,7 @@ export default function RemocaoUsuario() {
     } else {
         if ((formData.get('nomePessoa')).toLowerCase() == nomeLogin) {
             setMessageMood(false)
-            setErrorMessage('Não é possível excluir o seu próprio usuário')
+            setErrorMessage('Não é possível excluir o seu próprio usuário.')
         }
         setUsuariosSelecionados(usuarios)
         form.reset()
