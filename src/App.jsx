@@ -10,6 +10,11 @@ import Edicao from './routes/Edicao';
 import Remocao from './routes/Remocao';
 import Login from './routes/Login';
 
+import CadastroUsuario from './routes/CadastroUsuario'
+import ConsultaUsuario from './routes/ConsultaUsuario'
+import EdicaoUsuario from './routes/EdicaoUsuario'
+import RemocaoUsuario from './routes/RemocaoUsuario'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -38,6 +43,22 @@ const router = createBrowserRouter([
       {
         path: '/root/remocao',
         element: <Remocao />,
+      },
+      {
+        path: '/root/cadastroUsuario',
+        element: <CadastroUsuario />,
+      },
+      {
+        path: '/root/consultaUsuario',
+        element: <ConsultaUsuario />,
+      },
+      {
+        path: '/root/edicaoUsuario',
+        element: <EdicaoUsuario />,
+      },
+      {
+        path: '/root/remocaoUsuario',
+        element: <RemocaoUsuario />,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext, createContext } from 'react';
 
 import Sensores from '../sensors.json';
+import Usuarios from '../users.json'
 
 
 const ListaCadastroContext = createContext({});
@@ -9,8 +10,10 @@ export function ListaCadastroProvider(props) {
 
   const salvosSensores = JSON.parse(localStorage.getItem('selectedSensor')) || Sensores;
   const salvoNome = JSON.parse(localStorage.getItem('nomeLogin')) || null;
+  const salvoUsuario = JSON.parse(localStorage.getItem('nomePessoa')) || Usuarios;
   const [selectedSensor, setSelectedSensor] = useState(salvosSensores);
   const [nomeLogin, setNomeLogin] = useState(salvoNome);
+  const [usuarios, setUsuarios] = useState(salvoUsuario)
 
   //localStorage.clear()
 
@@ -22,13 +25,17 @@ export function ListaCadastroProvider(props) {
     localStorage.setItem('nomeLogin', JSON.stringify(nomeLogin));
   }, [nomeLogin]);
 
-  //setNomeLogin(localStorage.getItem('login'))
+  useEffect(() => {
+    localStorage.setItem('nomePessoa', JSON.stringify(usuarios));
+  }, [usuarios]);
 
   const contextValue = {
     selectedSensor,
     setSelectedSensor,
     nomeLogin,
     setNomeLogin, 
+    usuarios,
+    setUsuarios
   };
 
   return <ListaCadastroContext.Provider value={contextValue} {...props} />;

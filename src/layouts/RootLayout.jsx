@@ -53,7 +53,7 @@ export default function RootLayout() {
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
-              Cadastro
+              Cadastro S.
             </NavLink>
             <NavLink
               to="/root/consulta"
@@ -61,7 +61,7 @@ export default function RootLayout() {
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
-              Consulta
+              Consulta S.
             </NavLink>
             <NavLink
               to="/root/edicao"
@@ -69,7 +69,7 @@ export default function RootLayout() {
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
               }
             >
-              Edição
+              Edição S.
             </NavLink>
             <NavLink
               to="/root/remocao"
@@ -77,7 +77,41 @@ export default function RootLayout() {
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
               }
             >
-              Remoção
+              Remoção S.
+            </NavLink>
+
+            <div className="hidden md:block h-11 self-center border-l-2 border-white mx-4"></div> {/* Vertical line added here */}
+
+            <NavLink
+              to="/root/cadastroUsuario"
+              className={({ isActive }) =>
+                `ml-5 ${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
+              }>
+              Cadastro Us.
+            </NavLink>
+
+            <NavLink
+              to="/root/consultaUsuario"
+              className={({ isActive }) =>
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
+              }>
+              Consulta Us.
+            </NavLink>
+
+            <NavLink
+              to="/root/edicaoUsuario"
+              className={({ isActive }) =>
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
+              }>
+              Edição Us.
+            </NavLink>
+
+            <NavLink
+              to="/root/remocaoUsuario"
+              className={({ isActive }) =>
+                `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
+              }>
+              Remoção Us.
             </NavLink>
           </nav>
           <div

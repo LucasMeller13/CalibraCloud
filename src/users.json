@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "nomePessoa":"cleber",
+        "descricaoPessoa":"Laboratório LAEST, trabalha com professor X",
+        "dataCadastro": "2023-04-12"
+    },
+    {
+        "id":2,
+        "nomePessoa":"lucas",
+        "descricaoPessoa":"Laboratório LAVITRI, trabalha com professor Y",
+        "dataCadastro": "2023-04-12"
+    },
+    {
+        "id":3,
+        "nomePessoa":"joao",
+        "descricaoPessoa":"Laboratório LAMOB, trabalha com professor Z",
+        "dataCadastro": "2023-04-12"
+    }
+]
