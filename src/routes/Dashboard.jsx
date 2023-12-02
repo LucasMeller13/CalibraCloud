@@ -181,7 +181,7 @@ export default function Dashboard() {
       <div className='p-3 rounded-2xl 
                       strong-shadow bg-gradient-diagonal border-4 border-sky-950 w-full'>
         <div className='ml-10 mr-10 mb-10 mt-5 p-3 underline-offset-8 underline decoration-2'>
-          <h1 className='text-5xl underline-offset-8'>Bem vindo, {nomeLogin}.</h1>
+          <h1 className='text-6xl underline-offset-8'>Bem vindo, {nomeLogin}.</h1>
         </div>
         <div className='.bg-gradient-diagonal'>
           <div className="grid grid-cols-3 gap-4">
