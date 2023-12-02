@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+import { Navigate } from 'react-router-dom';
 
 export default function RemocaoUsuario() {
     const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
@@ -22,6 +23,11 @@ export default function RemocaoUsuario() {
         setIsDisabled(true);
         setUsuariosSelecionados(usuarios)
     }
+    }
+
+    function returnDataFormat(x) {
+        let [year, month, day] = x.split('-');
+    return `${day}/${month}/${year}`;
     }
 
     function removerSensor(event){
@@ -113,13 +119,16 @@ export default function RemocaoUsuario() {
                 <h3 className="text-lg">Usuário: {item.nomePessoa}</h3>
                 </div>
                     <div className="p-5">
-                        <p className="text-black"><span className="font-semibold">Data de Cadastro:</span> {(item.dataCadastro)}</p>
+                        <p className="text-black"><span className="font-semibold">Data de Cadastro:</span> {returnDataFormat(item.dataCadastro)}</p>
                         <p className="text-black"><span className="font-semibold">Descrição:</span> {item.descricaoPessoa}.</p>
                 </div>
             </div>
             ))
         )}
-        </div>
+            </div>
+            {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
         </>
     );
 }

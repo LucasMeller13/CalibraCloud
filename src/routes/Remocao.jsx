@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useListaCadastro} from '../context/ListaCadastroContext';
+import { useListaCadastro } from '../context/ListaCadastroContext';
+import { Navigate} from 'react-router-dom';
 
 export default function Remocao() {
-  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
+  const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
@@ -141,7 +142,10 @@ export default function Remocao() {
           </div>
         ))
       )}
-    </div>
+      </div>
+      {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
 </>
   );
 }

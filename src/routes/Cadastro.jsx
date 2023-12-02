@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
-
+import { Navigate} from 'react-router-dom';
 
 export default function Cadastro() {
   const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
@@ -194,6 +194,9 @@ export default function Cadastro() {
           </div>
         </form>
       </div>
+      {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
     </>
   );
 }

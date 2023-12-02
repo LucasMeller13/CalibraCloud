@@ -92,6 +92,9 @@ export default function Login() {
                     </button>
                 </div>
             </form>
+            {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
         </div>
     )
 }

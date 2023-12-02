@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useListaCadastro} from '../context/ListaCadastroContext';
+import { useListaCadastro } from '../context/ListaCadastroContext';
+import { Navigate} from 'react-router-dom';
 
 export default function Consulta() {
 
-  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
+  const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -190,7 +191,10 @@ export default function Consulta() {
           </div>
         ))
       )}
-    </div>
+      </div>
+      {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
 </>
   );
 }

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useListaCadastro } from '../context/ListaCadastroContext';
 import { PieChartComponent, BarChartSensorQtData, BarChartSensorQtTipo } from '../routes/Charts'
+import { Navigate} from 'react-router-dom';
 
 export default function Dashboard() {
-  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
+  const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isValidId, setIsValidId] = useState(false);
   const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
@@ -243,6 +244,9 @@ export default function Dashboard() {
           </div>
       </div>
       <div className='mt-40'></div>
+      {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
     </>
   );
 }

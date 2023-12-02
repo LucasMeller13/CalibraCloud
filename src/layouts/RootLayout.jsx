@@ -1,3 +1,4 @@
+import { DialogTitle } from '@radix-ui/themes';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
 
@@ -48,6 +49,7 @@ export default function RootLayout() {
               Dashboard
             </NavLink>
             <NavLink
+              title="Cadastro de novos sensores"
               to="/root/cadastro"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
@@ -56,6 +58,7 @@ export default function RootLayout() {
               Cadastro S.
             </NavLink>
             <NavLink
+              title="Consulta de sensores"
               to="/root/consulta"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
@@ -64,6 +67,7 @@ export default function RootLayout() {
               Consulta S.
             </NavLink>
             <NavLink
+              title="Edição de sensores"
               to="/root/edicao"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'}`
@@ -72,6 +76,7 @@ export default function RootLayout() {
               Edição S.
             </NavLink>
             <NavLink
+              title="Remoção de sensores"
               to="/root/remocao"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
@@ -83,6 +88,7 @@ export default function RootLayout() {
             <div className="hidden md:block h-11 self-center border-l-2 border-white mx-4"></div> {/* Vertical line added here */}
 
             <NavLink
+              title="Cadastro de novos usuários"
               to="/root/cadastroUsuario"
               className={({ isActive }) =>
                 `ml-5 ${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
@@ -91,6 +97,7 @@ export default function RootLayout() {
             </NavLink>
 
             <NavLink
+              title="Consulta de usuários"
               to="/root/consultaUsuario"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
@@ -99,6 +106,7 @@ export default function RootLayout() {
             </NavLink>
 
             <NavLink
+              title="Edição de usuários"
               to="/root/edicaoUsuario"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `
@@ -107,6 +115,7 @@ export default function RootLayout() {
             </NavLink>
 
             <NavLink
+              title="Remoção de usuários"
               to="/root/remocaoUsuario"
               className={({ isActive }) =>
                 `${navLinkClassName} ${isActive ? 'text-cyan-300' : 'text-slate-400'} `

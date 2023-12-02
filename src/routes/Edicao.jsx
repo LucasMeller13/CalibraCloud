@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useListaCadastro} from '../context/ListaCadastroContext';
+import { useListaCadastro } from '../context/ListaCadastroContext';
+import { Navigate} from 'react-router-dom';
 
 export default function Edicao() {
-  const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin} = useListaCadastro();
+  const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
   const [errorMessage, setErrorMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
   const [isValidId, setIsValidId] = useState(false);
@@ -246,7 +247,10 @@ export default function Edicao() {
           </div>
     </form>
     
-  </div>
+      </div>
+      {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
 </>
   );
 }

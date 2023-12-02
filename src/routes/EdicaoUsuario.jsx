@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+import { Navigate} from 'react-router-dom';
 
 export default function EdicaoUsuario() {
     const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
@@ -72,6 +73,9 @@ export default function EdicaoUsuario() {
                 setErrorMessage('Preencha todos os campos!')
             }
             form.reset();
+        }else {
+            setMessageMood(false)
+            setErrorMessage('Edição cancelada pelo usuário.')
         }
 
 
@@ -146,7 +150,9 @@ export default function EdicaoUsuario() {
 
             </form>
         </div>
-
+        {nomeLogin == null ?
+                            <Navigate replace to="/" />
+                            : null }
         </>
     );
 }

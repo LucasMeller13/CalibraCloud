@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useListaCadastro, generateId } from '../context/ListaCadastroContext';
+import { Navigate} from 'react-router-dom';
 
 export default function CadastroUsuario() {
     const {selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios} = useListaCadastro();
@@ -58,6 +59,9 @@ export default function CadastroUsuario() {
                 }
             }
             form.reset();
+        } else {
+            setMessageMood(false)
+            setErrorMessage('Cadastro cancelado pelo usuário.')
         }
 
 
@@ -117,6 +121,9 @@ export default function CadastroUsuario() {
                 </div>
 
             </form>
+            {nomeLogin == null ?
+                    <Navigate replace to="/" />
+                    : null }
         </div>
     );
 }

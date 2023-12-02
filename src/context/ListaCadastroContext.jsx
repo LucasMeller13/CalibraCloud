@@ -3,7 +3,6 @@ import { useEffect, useState, useContext, createContext } from 'react';
 import Sensores from '../sensors.json';
 import Usuarios from '../users.json'
 
-
 const ListaCadastroContext = createContext({});
 
 export function ListaCadastroProvider(props) {
