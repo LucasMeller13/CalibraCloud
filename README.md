@@ -11,7 +11,8 @@ O objetivo do projeto **CalibraCloud** é organizar em um único lugar na nuvem 
 ### Estrutura do projeto
 <ul>
   <li>Página Inicial (Dashboard): indicadores e gráficos sobre as calibrações como quantidade de sensores cadastrados por mês, quantidade de sensores cadastrados por tipo, usuário com mais sensores calibrados, entre outros.</li>
-  <li>Página CRUD: cadastro, consulta, edição e remoção de calibrações.</li>
+  <li>Página CRUD p/ sensores: cadastro, consulta, edição e remoção de calibrações.</li>
+  <li>Página CRUD p/ usuários: cadastro, consulta, edição e remoção de usuários.</li>
   <li><s>Páginas Novas Calibrações: página para o administrador revisar novas calibrações e decidir entre aceitá-las ou vetá-las.</s></li>
 </ul>
 
