@@ -108,5 +108,25 @@
     "nomePessoa": "cleber",
     "descricao": "blabla",
     "equacaoCalibracao": "y = 4321x^3 - 3544.23x^2 - 2345.1x + 3"
+  },
+  {
+    "id": "tr311",
+    "tipoSensor": "sensorPressao",
+    "r2": 0.912,
+    "ordemTendencia": 4,
+    "data": "2021-10-24",
+    "nomePessoa": "mateus",
+    "descricao": "blabla",
+    "equacaoCalibracao": "y = 12.432x^4 - 234.21x^2 - 12.1x - 20"
+  },
+  {
+    "id": "fgdwe",
+    "tipoSensor": "celulaCarga",
+    "r2": 0.987,
+    "ordemTendencia": 1,
+    "data": "2021-05-12",
+    "nomePessoa": "mateus",
+    "descricao": "blabla",
+    "equacaoCalibracao": "y = 12.432x"
   }
 ]
