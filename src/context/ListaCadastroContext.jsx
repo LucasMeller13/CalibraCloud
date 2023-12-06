@@ -14,6 +14,10 @@ export function ListaCadastroProvider(props) {
   const [nomeLogin, setNomeLogin] = useState(salvoNome);
   const [usuarios, setUsuarios] = useState(salvoUsuario)
 
+  /*Caso quiser resetar a LocalStorage, basta descomentar a linha de código abaixo e dar um F5 no seu navegador.
+    Importante recomentar o código após resetá-lo, já que caso não fizer correrá o risco de perder os cadastros feitos
+     por conta de um refresh do navegador. */
+  
   //localStorage.clear()
 
   useEffect(() => {
