@@ -8,6 +8,12 @@ Depois disso, você poderá rodar o projeto com o Vite utilizando o comando:
 
 `npm run dev`
 
+## Página Login
+
+Para fazer login basta usar qualquer usuário de users.json ('lucas','joao','cleber','mateus'), já a senha pode ser qualquer caractere.
+
+---
+
 # CalibraCloud  
 
 Integrantes: André Eyng e Lucas Meller.
