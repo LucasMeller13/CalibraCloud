@@ -41,8 +41,6 @@ export default function EdicaoUsuario() {
 
         const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja atualizar o usuário ${formData.get('nomePessoa')}?`);
 
-        //console.log(usuarios)
-
         if (confirmacaoEdicaoUser) {
             if (
                 formData.get('nomePessoa') !== '' &&

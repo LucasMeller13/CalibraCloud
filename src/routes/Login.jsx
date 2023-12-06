@@ -26,7 +26,6 @@ export default function Login() {
             if (usuarioEncontrado) {
                 form.reset();
                 setNomeLogin(formData.get('login').toLowerCase())
-                //console.log(nomeLogin)
                 setAcesso(true)
             } else {
                 setMessageMood(false)

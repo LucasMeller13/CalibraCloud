@@ -64,7 +64,7 @@ export default function Edicao() {
       ) {
 
         let idForm = formData.get('sensorId');
-        let nome = formData.get('nomePessoa');
+        let nome = nomeInput;
         let sensorTipo = formData.get('dropdownTipoSensor')
         let ordemTendenciaForm = formData.get('ordemTendencia')
         let r2Form = formData.get('r2')
@@ -90,7 +90,7 @@ export default function Edicao() {
           return item;
         }));
   
-        form.reset();
+        //form.reset();
         setMessageMood(true);
         setErrorMessage('Edição feita!');
       

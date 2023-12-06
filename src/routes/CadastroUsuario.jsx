@@ -25,8 +25,6 @@ export default function CadastroUsuario() {
 
         const confirmacaoEdicaoUser = window.confirm(`Tem certeza que deseja cadastrar o usuário ${formData.get('nomePessoa')}?`);
 
-        //console.log(usuarios)
-
         if (confirmacaoEdicaoUser) {
             if (
                 formData.get('nomePessoa') !== '' &&

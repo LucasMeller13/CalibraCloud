@@ -1,13 +1,9 @@
-import { useState } from 'react';
 import { useListaCadastro } from '../context/ListaCadastroContext';
 import { PieChartComponent, BarChartSensorQtData, BarChartSensorQtTipo } from '../routes/Charts'
 import { Navigate} from 'react-router-dom';
 
 export default function Dashboard() {
   const { selectedSensor, setSelectedSensor, nomeLogin, setNomeLogin, usuarios, setUsuarios } = useListaCadastro();
-  const [errorMessage, setErrorMessage] = useState('');
-  const [isValidId, setIsValidId] = useState(false);
-  const [sensoresFiltrados, SetSensoresFiltrados] = useState(selectedSensor);
 
   function returnDataFormat(x) {
     let [year, month, day] = x.split('-');
@@ -69,8 +65,6 @@ export default function Dashboard() {
     x,
     y,
     }));
-
-    //console.log(resultArray)
     
     return resultArray
     
@@ -88,9 +82,6 @@ export default function Dashboard() {
   name,
   y,
   }));
-
-  console.log(data)
-  //console.log(resultArray)
   
   return resultArray
     
@@ -134,8 +125,7 @@ export default function Dashboard() {
     x,
     y,
     }));
-    
-    //console.log(resultArray)
+
 
     const ordemMeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
     const ordemAnos = Array.from(new Set(resultArray.map(x => +x.x.slice(4, 8)))).sort()
@@ -150,8 +140,6 @@ export default function Dashboard() {
         }
       }
     }
-
-    //console.log(tempArray)
     
   return tempArray;
 }
@@ -173,8 +161,6 @@ export default function Dashboard() {
       return "Sensor de temperatura"
     }
   }
-
-  //console.log(selectedSensor)
   
   return (
     <>

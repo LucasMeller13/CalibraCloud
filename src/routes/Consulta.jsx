@@ -69,6 +69,7 @@ export default function Consulta() {
       
       // resetando o form e apagando mensagens de erro antigas
       setErrorMessage('');
+      form.reset()
       
     } else {
       SetSensoresFiltrados(selectedSensor)
