@@ -1,3 +1,13 @@
+## Instalação do Projeto
+
+Caso você queira executar este projeto em sua máquina, faça o download e acesse a pasta do projeto. Após isso, execute a seguinte linha de comando para instalar as dependências:
+
+`npm install`
+
+Depois disso, você poderá rodar o projeto com o Vite utilizando o comando:
+
+`npm run dev`
+
 # CalibraCloud  
 
 Integrantes: André Eyng e Lucas Meller.
